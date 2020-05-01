@@ -1,0 +1,20 @@
+{
+    "name": "telewor",
+    "version": "1.0.0",
+    "description": "",
+    "main": "back.js",
+    "scripts": {
+        "start": "node back.js",
+        "dev": "nodemon back.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.19.2",
+        "csv-parser": "^2.3.2",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3"
+    }
+}
