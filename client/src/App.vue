@@ -5,10 +5,27 @@
 </template>
 
 <script>
-
+import axios from 'axios';
 export default {
+
   name: 'App',
+  
   components: {
+  },
+  data(){
+   return {
+      teachers:[],
+    }
+  },
+  mounted(){
+    axios.get('http://localhost:3000').then(
+      (response)=> {
+        console.log(response.data);
+        this.teachers = response.data;
+      }
+    ).catch((e)=>{
+      console.error(e);
+    });
   }
 }
 </script>
