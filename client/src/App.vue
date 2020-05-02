@@ -1,33 +1,50 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <Status></Status>
+    <!--   <li v-for="item in teachers" :key="item.timeAns" v-bind="item">{{item.name}}</li>
+    -->
+    <li v-for='item in teachers' :key="item.name" v-bind="item">{{item.platform}}</li>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
+import Status from "../src/components/Status-1.vue";
 export default {
+  name: "App",
 
-  name: 'App',
-  
   components: {
+    Status
   },
-  data(){
-   return {
-      teachers:[],
-    }
+  data() {
+    return {
+      teachers: [],
+      teacherMap: new Map(),
+    };
   },
-  mounted(){
-    axios.get('http://localhost:3000').then(
-      (response)=> {
+  mounted() {
+    axios
+      .get("http://localhost:3000")
+      .then(response => {
         console.log(response.data);
         this.teachers = response.data;
+      })
+      .catch(e => {
+        console.error(e);
+      });
+
+    for (let item in this.teachers) {
+      if (this.teacherMap.has(item.platform)) {
+        let counter = this.teacherMap.get(item.platform);
+        counter++;
+        this.teacherMap.set(item.platform, counter);
+      } else {
+        this.teacherMap.set(item.platform, 0);
       }
-    ).catch((e)=>{
-      console.error(e);
-    });
+    }
   }
-}
+};
 </script>
 
 <style>
