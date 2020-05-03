@@ -2,9 +2,11 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
     <Status></Status>
-    <!--   <li v-for="item in teachers" :key="item.timeAns" v-bind="item">{{item.name}}</li>
-    -->
-    <li v-for='item in teachers' :key="item.name" v-bind="item">{{item.platform}}</li>
+
+    <li v-for="(item,i) in teacherMap.values()" :key="item*(i+1)" >{{item}} </li>
+    <hr />
+    <li v-for="(item,i) in teacherMap.keys()" :key="i+1">{{item}}</li>
+    <hr />
   </div>
 </template>
 
@@ -17,32 +19,34 @@ export default {
   components: {
     Status
   },
+  created() {},
   data() {
     return {
       teachers: [],
-      teacherMap: new Map(),
+      teacherMap: {}
     };
   },
   mounted() {
     axios
       .get("http://localhost:3000")
       .then(response => {
-        console.log(response.data);
+         console.log(response.data);
         this.teachers = response.data;
+        this.teacherMap = new Map();
+        for (let item of this.teachers) {
+         // console.log("asdasdasdasasdasasdasdadsasdasdasd");
+          if (this.teacherMap.has(item.platform)) {
+            let counter = this.teacherMap.get(item.platform);
+            counter++;
+            this.teacherMap.set(item.platform, counter);
+          } else {
+            this.teacherMap.set(item.platform, 1);
+          }
+        }
       })
       .catch(e => {
         console.error(e);
       });
-
-    for (let item in this.teachers) {
-      if (this.teacherMap.has(item.platform)) {
-        let counter = this.teacherMap.get(item.platform);
-        counter++;
-        this.teacherMap.set(item.platform, counter);
-      } else {
-        this.teacherMap.set(item.platform, 0);
-      }
-    }
   }
 };
 </script>
