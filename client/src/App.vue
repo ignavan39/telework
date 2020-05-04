@@ -1,40 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <Status></Status>
-
-    <li v-for="(item,i) in teacherMap.values()" :key="item*(i+1)" >{{item}} </li>
-    <hr />
-    <li v-for="(item,i) in teacherMap.keys()" :key="i+1">{{item}}</li>
+    <Status1 :keys="teacherMap.keys()" :values="teacherMap.values()"></Status1>
     <hr />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import Status from "../src/components/Status-1.vue";
+import Status1 from "../src/components/Status";
 export default {
   name: "App",
 
   components: {
-    Status
+    Status1
   },
-  created() {},
-  data() {
-    return {
-      teachers: [],
-      teacherMap: {}
-    };
-  },
+  data: () => ({
+    teachers: [],
+    teacherMap: {}
+  }),
   mounted() {
     axios
       .get("http://localhost:3000")
       .then(response => {
-         console.log(response.data);
+        console.log(response.data);
         this.teachers = response.data;
         this.teacherMap = new Map();
         for (let item of this.teachers) {
-         // console.log("asdasdasdasasdasasdasdadsasdasdasd");
           if (this.teacherMap.has(item.platform)) {
             let counter = this.teacherMap.get(item.platform);
             counter++;
