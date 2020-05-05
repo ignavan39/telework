@@ -2,21 +2,26 @@
   <div id="app">
     <Status1 :keys="teacherMap.keys()" :values="teacherMap.values()"></Status1>
     <hr />
+   
+   <StatusSchool :schoolMap="schoolMap" :teachers="teachers"></StatusSchool>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import Status1 from "../src/components/Status";
+import StatusSchool from "../src/components/StatusOnSchool";
 export default {
   name: "App",
 
   components: {
-    Status1
+    Status1,
+    StatusSchool
   },
   data: () => ({
     teachers: [],
-    teacherMap: {}
+    teacherMap: {},
+    schoolMap: {}
   }),
   mounted() {
     axios
@@ -25,7 +30,9 @@ export default {
         console.log(response.data);
         this.teachers = response.data;
         this.teacherMap = new Map();
+        this.schoolMap = new Set();
         for (let item of this.teachers) {
+          this.schoolMap.add(item.school);
           if (this.teacherMap.has(item.platform)) {
             let counter = this.teacherMap.get(item.platform);
             counter++;
@@ -38,7 +45,8 @@ export default {
       .catch(e => {
         console.error(e);
       });
-  }
+  },
+ 
 };
 </script>
 

@@ -24,75 +24,79 @@ export default {
     fillData() {
       const keys1 = [];
       const values1 = [];
+      let size = 0;
       let idx = 0;
       for (let i of this.keys) {
+      
         keys1[idx] = i;
         idx++;
       }
       idx = 0;
       for (let i of this.values) {
+          size +=i;
         values1[idx] = i;
         idx++;
+        
       }
     
        
        this.datacollection = {
-          labels: ['Platforms'],
+          labels: [`Наиболее часто используемые платформы в Омской области и Самаре (${size} человека)`],
           datasets: [
             {
-              label: `1:${keys1[0]}(${values1[0]})`,
+              label: `1:${keys1[0]}(${((values1[0]/size)*100).toFixed(2) }%)`,
               backgroundColor: '#f87979',
               data:[values1[0]]
             }, {
-              label:`2:${keys1[1]}(${values1[1]})`,
+              label:`2:${keys1[1]}(${((values1[1]/size)*100).toFixed(2)}%)`,
               backgroundColor: '#fcac45',
               data:[values1[1]]
             },
             {
-              label: `3:${keys1[2]}(${values1[2]})`,
+              label: `3:${keys1[2]}(${((values1[2]/size)*100).toFixed(2)}%)`,
               backgroundColor: 'rgb(21, 104, 0)',
               data:[values1[2]]
             },
             {
-              label: `4:${keys1[3]}(${values1[4]})`,
+              label: `4:${keys1[3]}(${((values1[3]/size)*100).toFixed(2)}%)`,
               backgroundColor: 'rgb(24, 67, 255)',
               data:[values1[3]]
             },
             {
-              label: `5:${keys1[4]}(${values1[4]})`,
+              label: `5:${keys1[4]}(${((values1[4]/size)*100).toFixed(2)}%)`,
               backgroundColor: 'rgb(255, 224, 139)',
               data:[values1[4]]
             },
             {
-              label: `6:${keys1[5]}(${values1[5]})`,
+              label: `6:${keys1[5]}(${((values1[5]/size)*100).toFixed(2)}%)`,
               backgroundColor: 'rgb(0, 190, 196)',
               data:[values1[5]]
             },
             {
-              label: `7:${keys1[6]}(${values1[6]})`,
+              label: `7:${keys1[6]}(${((values1[6]/size)*100).toFixed(2)}%)`,
               backgroundColor: 'rgb(0, 85, 196)',
               data:[values1[6]]
             },
             {
-              label: `8:${keys1[7]}(${values1[7]})`,
+              label: `8:${keys1[7]}(${((values1[7]/size)*100).toFixed(2)}%)`,
               backgroundColor: 'rgb(148, 42, 0)',
               data:[values1[7]]
             }
             ,
             {
-              label: `9:${keys1[8]}(${values1[8]})`,
+              label: `9:${keys1[8]}(${((values1[8]/size)*100).toFixed(2)}%)`,
               backgroundColor: 'red',
               data:[values1[8]]
             }
             ,
             {
-              label:`10:${keys1[9]}(${values1[9]})`,
+              label:`10:${keys1[9]}(${((values1[9]/size)*100).toFixed(2)}%)`,
               backgroundColor: 'rgb(190, 255, 115)',
               data:[values1[9]]
             }
             ,
             {
-              label:`11:${keys1[10]}(${values1[10]})`,
+              label:`11:${keys1[10]}(${((values1[10]/size)*100).toFixed(2)}%)`,
               backgroundColor: 'rgb(25, 152, 161)',
               data:[values1[10]]
             }
@@ -107,5 +111,12 @@ export default {
 .small {
   max-width: 600px;
   margin: 50px auto;
+}
+@media screen and(max-width: 800px) {
+ .small{
+   max-width: 600px;
+    min-width: 400px;
+    margin:auto;
+ }
 }
 </style>
