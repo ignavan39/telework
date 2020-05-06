@@ -7,6 +7,7 @@
     <div v-if="teacherMap2" class="small">
     <line-chart :chartData="datacollection" :options="options"></line-chart>
     </div>
+    <!--  </div>-->
   </div>
 </template>
 
@@ -34,7 +35,7 @@ export default {
       responsive: true,
       maintainAspectRatio: false
       }
-    };
+    }
   },
   components: {
    // Status1

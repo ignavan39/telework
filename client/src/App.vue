@@ -27,25 +27,7 @@ export default {
   data: () => ({
     teachers: [],
     teacherMap: {},
-    schoolMap: {},
-    datacollection: null,
-    color: [
-      "rgb(25, 152, 161)",
-      "rgb(190, 255, 115)",
-      "red",
-      "rgb(148, 42, 0)",
-      "rgb(0, 85, 196)",
-      "rgb(0, 190, 196)",
-      "rgb(255, 224, 139)",
-      "rgb(24, 67, 255)",
-      "rgb(21, 104, 0)",
-      "#fcac45",
-      "#f87979"
-    ],
-    options: {
-      responsive: true,
-      maintainAspectRatio: false
-    }
+    schoolMap: {}
   }),
   async mounted() {
     await axios
@@ -82,6 +64,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  background: #fcad452d;
 }
 </style>
