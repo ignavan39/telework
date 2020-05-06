@@ -28,17 +28,24 @@ export default {
     teachers: [],
     teacherMap: {},
     schoolMap: {},
-     datacollection: null,
-      color:[
-        'rgb(25, 152, 161)',
-         'rgb(190, 255, 115)',
-         'red', 'rgb(148, 42, 0)','rgb(0, 85, 196)','rgb(0, 190, 196)','rgb(255, 224, 139)',
-         'rgb(24, 67, 255)','rgb(21, 104, 0)', '#fcac45', '#f87979',
-      ],
-      options: {
+    datacollection: null,
+    color: [
+      "rgb(25, 152, 161)",
+      "rgb(190, 255, 115)",
+      "red",
+      "rgb(148, 42, 0)",
+      "rgb(0, 85, 196)",
+      "rgb(0, 190, 196)",
+      "rgb(255, 224, 139)",
+      "rgb(24, 67, 255)",
+      "rgb(21, 104, 0)",
+      "#fcac45",
+      "#f87979"
+    ],
+    options: {
       responsive: true,
       maintainAspectRatio: false
-      }
+    }
   }),
   async mounted() {
     await axios
@@ -49,7 +56,7 @@ export default {
         this.teacherMap = new Map();
         this.schoolMap = new Set();
         for (let item of this.teachers) {
-          this.schoolMap.add(item.school);
+          this.schoolMap.add(item.school.trim());
           if (this.teacherMap.has(item.platform.trim())) {
             let counter = this.teacherMap.get(item.platform.trim());
             counter++;
@@ -58,7 +65,6 @@ export default {
             this.teacherMap.set(item.platform.trim(), 1);
           }
         }
-        
       })
       .catch(e => {
         console.error(e);
