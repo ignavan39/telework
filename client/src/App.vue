@@ -8,7 +8,8 @@
       ></Status1>
       <hr />
 
-      <StatusSchool :schoolMap="schoolMap" :teachers="teachers"></StatusSchool>
+      <StatusSchool :optionSet="schoolSet" :teachers="teachers" :choice="'school'"></StatusSchool>
+      <StatusSchool :optionSet="areaSet" :teachers="teachers" :choice="'area'"></StatusSchool>
     </div>
   </div>
 </template>
@@ -27,7 +28,8 @@ export default {
   data: () => ({
     teachers: [],
     teacherMap: {},
-    schoolMap: {}
+    schoolSet: {},
+    areaSet: {}
   }),
   async mounted() {
     await axios
@@ -36,9 +38,11 @@ export default {
         console.log(response.data);
         this.teachers = response.data;
         this.teacherMap = new Map();
-        this.schoolMap = new Set();
+        this.areaSet = new Set();
+        this.schoolSet = new Set();
         for (let item of this.teachers) {
-          this.schoolMap.add(item.school.trim());
+          this.schoolSet.add(item.school.trim());
+          this.areaSet.add(item.Area.trim());
           if (this.teacherMap.has(item.platform.trim())) {
             let counter = this.teacherMap.get(item.platform.trim());
             counter++;
