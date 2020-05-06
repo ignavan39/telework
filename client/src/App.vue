@@ -28,7 +28,7 @@ export default {
   }),
   async mounted() {
     await axios
-      .get("http://localhost:3000")
+      .get("/api")
       .then(response => {
         console.log(response.data);
         this.teachers = response.data;
