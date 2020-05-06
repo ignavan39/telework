@@ -5,12 +5,8 @@
       <option v-for="(item,i) of schoolMap" :key="i" value:item>{{item}}</option>
     </select>
     <div v-if="teacherMap2" class="small">
-      <!-- <div v-if="teacherMap2">-->
-      <!-- <Helper :keys="keys" :values="values" :size="size"/>-->
-      <!--<Status1 :keys="teacherMap2.keys()" :values="teacherMap2.values()" :label="filter"></Status1>
-   --> <line-chart :chartData="datacollection" :options="options"></line-chart>
+    <line-chart :chartData="datacollection" :options="options"></line-chart>
     </div>
-    <!--  </div>-->
   </div>
 </template>
 

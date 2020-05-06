@@ -1,10 +1,8 @@
 const fs = require('fs');
-const path = require('path');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const csv = require('csv-parser');
-const { runInThisContext } = require('vm');
 const results = [];
 
 app.use(function(req, res, next) {
@@ -26,9 +24,6 @@ fs
 app.get('/api', (req, res, next) => {
     res.send(results);
 });
-/*router.get('/', (req, res) => {
-    res.send('/client/public/index.html');
-});*/
 
 if (process.env.NODE_ENV === 'production') {
     //static
@@ -36,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
 
     //SPA
 
-    app.get(/.*/, (req, res) => res.sendFile(__dirname + +'/public/index.html'));
+    app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
 };
 
 

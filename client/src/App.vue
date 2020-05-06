@@ -1,11 +1,15 @@
 <template>
   <div id="app">
     <div v-if="teacherMap">
-    <Status1 :keys="teacherMap.keys()" :values="teacherMap.values()" :label="'Наиболее часто используемые платформы в Омской области и Самаре'"></Status1>
-    <hr />
-   
-   <StatusSchool :schoolMap="schoolMap" :teachers="teachers"></StatusSchool>
-   </div>
+      <Status1
+        :keys="teacherMap.keys()"
+        :values="teacherMap.values()"
+        :label="'Наиболее часто используемые платформы в Омской области и Самаре'"
+      ></Status1>
+      <hr />
+
+      <StatusSchool :schoolMap="schoolMap" :teachers="teachers"></StatusSchool>
+    </div>
   </div>
 </template>
 
@@ -24,7 +28,17 @@ export default {
     teachers: [],
     teacherMap: {},
     schoolMap: {},
-    teacherSchoolMap:[]
+     datacollection: null,
+      color:[
+        'rgb(25, 152, 161)',
+         'rgb(190, 255, 115)',
+         'red', 'rgb(148, 42, 0)','rgb(0, 85, 196)','rgb(0, 190, 196)','rgb(255, 224, 139)',
+         'rgb(24, 67, 255)','rgb(21, 104, 0)', '#fcac45', '#f87979',
+      ],
+      options: {
+      responsive: true,
+      maintainAspectRatio: false
+      }
   }),
   async mounted() {
     await axios
@@ -36,12 +50,12 @@ export default {
         this.schoolMap = new Set();
         for (let item of this.teachers) {
           this.schoolMap.add(item.school);
-          if (this.teacherMap.has(item.platform)) {
-            let counter = this.teacherMap.get(item.platform);
+          if (this.teacherMap.has(item.platform.trim())) {
+            let counter = this.teacherMap.get(item.platform.trim());
             counter++;
-            this.teacherMap.set(item.platform, counter);
+            this.teacherMap.set(item.platform.trim(), counter);
           } else {
-            this.teacherMap.set(item.platform, 1);
+            this.teacherMap.set(item.platform.trim(), 1);
           }
         }
         
@@ -49,8 +63,7 @@ export default {
       .catch(e => {
         console.error(e);
       });
-  },
- 
+  }
 };
 </script>
 
