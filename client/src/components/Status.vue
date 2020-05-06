@@ -11,19 +11,35 @@ export default {
   components: {
     LineChart
   },
-  props: ["keys" ,"label", "values"],
+  props: ["keys", "label", "values"],
   data() {
     return {
       datacollection: null,
-      color:[
-        'rgb(25, 152, 161)',
-         'rgb(190, 255, 115)',
-         'red', 'rgb(148, 42, 0)','rgb(0, 85, 196)','rgb(0, 190, 196)','rgb(255, 224, 139)',
-         'rgb(24, 67, 255)','rgb(21, 104, 0)', '#fcac45', '#f87979',
+      color: [
+        "rgb(25, 152, 161)",
+        "rgb(190, 255, 115)",
+        "red",
+        "rgb(148, 42, 0)",
+        "rgb(0, 85, 196)",
+        "rgb(0, 190, 196)",
+        "rgb(255, 224, 139)",
+        "rgb(24, 67, 255)",
+        "rgb(21, 104, 0)",
+        "#fcac45",
+        "#f87979"
       ],
       options: {
-      responsive: true,
-      maintainAspectRatio: false
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
+        }
       }
     };
   },
@@ -42,23 +58,25 @@ export default {
       }
       idx = 0;
       for (let i of this.values) {
-          size +=i;
-          values1[idx] = i;
-          idx++;
+        size += i;
+        values1[idx] = i;
+        idx++;
       }
-       let arr = [];
-       for(let i=0;i<values1.length;i++){
-          arr[i]= {
-              label: `${i+1}:${keys1[i]}(${((values1[i]/size)*100).toFixed(2) }%)`,
-              backgroundColor: this.color[i],
-              data :[values1[i]]
-            }
-       }
-       this.datacollection = {
-          labels: [`${this.label} (${size} человек)`],
-          datasets: arr    
-        }
-    //    console.log(this.datacollection);
+      let arr = [];
+      for (let i = 0; i < values1.length; i++) {
+        arr[i] = {
+          label: `${i + 1}:${keys1[i]}(${((values1[i] / size) * 100).toFixed(
+            2
+          )}%)`,
+          backgroundColor: this.color[i],
+          data: [values1[i]]
+        };
+      }
+      this.datacollection = {
+        labels: [`${this.label} (${size} человек)`],
+        datasets: arr
+      };
+      //    console.log(this.datacollection);
       //  console.log()
     }
   }
@@ -69,13 +87,13 @@ export default {
 .small {
   max-width: 600px;
   margin: 50px auto;
-   width: 100%;
+  width: 100%;
 }
 @media screen and(max-width: 800px) {
- .small{
-   max-width: 600px;
+  .small {
+    max-width: 600px;
     min-width: 400px;
-    margin:auto;
- }
+    margin: auto;
+  }
 }
 </style>
