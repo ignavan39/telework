@@ -58,8 +58,8 @@ export default {
           labels: [`${this.label} (${size} человек)`],
           datasets: arr    
         }
-        console.log(this.datacollection);
-        console.log()
+    //    console.log(this.datacollection);
+      //  console.log()
     }
   }
 };

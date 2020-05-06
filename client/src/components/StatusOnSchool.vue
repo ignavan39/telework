@@ -5,7 +5,7 @@
       <option v-for="(item,i) of schoolMap" :key="i" value:item>{{item}}</option>
     </select>
     <div v-if="teacherMap2" class="small">
-    <line-chart :chartData="datacollection" :options="options"></line-chart>
+      <line-chart :chartData="datacollection" :options="options"></line-chart>
     </div>
     <!--  </div>-->
   </div>
@@ -25,21 +25,37 @@ export default {
       size: Number,
       root: "",
       datacollection: null,
-      color:[
-        'rgb(25, 152, 161)',
-         'rgb(190, 255, 115)',
-         'red', 'rgb(148, 42, 0)','rgb(0, 85, 196)','rgb(0, 190, 196)','rgb(255, 224, 139)',
-         'rgb(24, 67, 255)','rgb(21, 104, 0)', '#fcac45', '#f87979',
+      color: [
+        "rgb(25, 152, 161)",
+        "rgb(190, 255, 115)",
+        "red",
+        "rgb(148, 42, 0)",
+        "rgb(0, 85, 196)",
+        "rgb(0, 190, 196)",
+        "rgb(255, 224, 139)",
+        "rgb(24, 67, 255)",
+        "rgb(21, 104, 0)",
+        "#fcac45",
+        "#f87979"
       ],
       options: {
-      responsive: true,
-      maintainAspectRatio: false
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
+        }
       }
-    }
+    };
   },
   components: {
-   // Status1
-   LineChart
+    // Status1
+    LineChart
   },
   watch: {
     filter(value) {
@@ -101,13 +117,14 @@ export default {
 .small {
   max-width: 600px;
   margin: 50px auto;
-   width: 100%;
+  width: 100%;
+  height: 100%;
 }
 @media screen and(max-width: 800px) {
- .small{
-   max-width: 600px;
+  .small {
+    max-width: 600px;
     min-width: 400px;
-    margin:auto;
- }
+    margin: auto;
+  }
 }
 </style>
