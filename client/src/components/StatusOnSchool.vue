@@ -3,6 +3,7 @@
     <h3 v-if="choice==='school'">Выберете школу</h3>
     <h3 v-else-if="choice==='area'">Выберете Район</h3>
     <select v-model="filter">
+      <option v-if="choice==='area'" value="Все">Всe</option>
       <option v-for="(item,i) of optionSet" :key="i" value:item>{{item}}</option>
     </select>
     <div v-if="datacollection" class="small">
@@ -21,7 +22,7 @@ export default {
   name: "StatusSchool",
   data() {
     return {
-      filter: String,
+      filter: "", //this.choice === 'area' ? 'all' : '',
       size: Number,
       root: "",
       datacollection: null,
@@ -53,6 +54,14 @@ export default {
       }
     };
   },
+  updated() {
+    if (this.choice === "area") {
+      if (this.filter === "") {
+        this.filter = "Все";
+        this.fillData(this.filter);
+      }
+    }
+  },
   components: {
     // Status1
     LineChart
@@ -66,30 +75,38 @@ export default {
       }
     }
   },
+
   methods: {
     fillData: function(value) {
       let teacherMap2 = new Map();
       for (let item of this.teachers) {
         if (this.choice === "school") {
           if (item.school === value) {
-            if (teacherMap2.has(item.platform)) {
-              let counter = teacherMap2.get(item.platform);
+            if (teacherMap2.has(item.platform.trim())) {
+              let counter = teacherMap2.get(item.platform.trim());
               counter++;
-              teacherMap2.set(item.platform, counter);
+              teacherMap2.set(item.platform.trim(), counter);
             } else {
-              teacherMap2.set(item.platform, 1);
+              teacherMap2.set(item.platform.trim(), 1);
             }
           }
-        }
-        else if (this.choice === "area") {
-       
-         if (item.Area === value) {
-            if (teacherMap2.has(item.platform)) {
-              let counter = teacherMap2.get(item.platform);
+        } else if (this.choice === "area") {
+          if (value === "Все") {
+            if (teacherMap2.has(item.platform.trim())) {
+              let counter = teacherMap2.get(item.platform.trim());
               counter++;
-              teacherMap2.set(item.platform, counter);
+              teacherMap2.set(item.platform.trim(), counter);
             } else {
-              teacherMap2.set(item.platform, 1);
+              teacherMap2.set(item.platform.trim(), 1);
+            }
+          }
+          if (item.Area === value) {
+            if (teacherMap2.has(item.platform.trim())) {
+              let counter = teacherMap2.get(item.platform.trim());
+              counter++;
+              teacherMap2.set(item.platform.trim(), counter);
+            } else {
+              teacherMap2.set(item.platform.trim(), 1);
             }
           }
         }
@@ -111,7 +128,9 @@ export default {
       let arr = [];
       for (let i = 0; i < values1.length; i++) {
         arr[i] = {
-          label: `${i + 1}:${keys1[i]}(${((values1[i] / size) * 100).toFixed(2)}%)`,
+          label: `${i + 1}:${keys1[i]}(${((values1[i] / size) * 100).toFixed(
+            2
+          )}%)`,
           backgroundColor: this.color[i],
           data: [values1[i]]
         };
@@ -120,7 +139,7 @@ export default {
         labels: [`${value} (${size} человек)`],
         datasets: arr
       };
-        console.log(this.datacollection )
+      console.log(this.datacollection);
     }
   }
 };
