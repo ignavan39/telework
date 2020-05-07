@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div v-if="teachers">
-       <StatusSchool :optionSet="areaSet" :teachers="teachers" :choice="'area'"></StatusSchool>
+      <StatusSchool :optionSet="areaSet" :teachers="teachers" :choice="'area'"></StatusSchool>
       <hr />
 
       <StatusSchool :optionSet="schoolSet" :teachers="teachers" :choice="'school'"></StatusSchool>
-     
+      <!--  <TimeOnJob :teachers="teachers"></TimeOnJob>-->
     </div>
   </div>
 </template>
@@ -13,10 +13,12 @@
 <script>
 import axios from "axios";
 import StatusSchool from "../src/components/StatusOnSchool";
+//import TimeOnJob from "../src/components/TimeForJob";
 export default {
   name: "App",
 
   components: {
+    // TimeOnJob,
     StatusSchool
   },
   data: () => ({

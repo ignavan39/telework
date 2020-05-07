@@ -60,6 +60,11 @@ export default {
         this.filter = "Все";
         this.fillData(this.filter);
       }
+    } else if (this.choice === "school") {
+      if (this.filter === "") {
+        this.filter = "Шербакульский Лицей";
+        this.fillData(this.filter);
+      }
     }
   },
   components: {
@@ -80,33 +85,38 @@ export default {
     fillData: function(value) {
       let teacherMap2 = new Map();
       for (let item of this.teachers) {
-        if (this.choice === "school") {
-          if (item.school === value) {
-            if (teacherMap2.has(item.platform.trim())) {
-              let counter = teacherMap2.get(item.platform.trim());
-              counter++;
-              teacherMap2.set(item.platform.trim(), counter);
-            } else {
-              teacherMap2.set(item.platform.trim(), 1);
+        if (
+          item.platform.trim() !== "Дневник.ру" &&
+          item.platform.trim() !== "дневник.ру"
+        ) {
+          if (this.choice === "school") {
+            if (item.school === value) {
+              if (teacherMap2.has(item.platform.trim())) {
+                let counter = teacherMap2.get(item.platform.trim());
+                counter++;
+                teacherMap2.set(item.platform.trim(), counter);
+              } else {
+                teacherMap2.set(item.platform.trim(), 1);
+              }
             }
-          }
-        } else if (this.choice === "area") {
-          if (value === "Все") {
-            if (teacherMap2.has(item.platform.trim())) {
-              let counter = teacherMap2.get(item.platform.trim());
-              counter++;
-              teacherMap2.set(item.platform.trim(), counter);
-            } else {
-              teacherMap2.set(item.platform.trim(), 1);
+          } else if (this.choice === "area") {
+            if (value === "Все") {
+              if (teacherMap2.has(item.platform.trim())) {
+                let counter = teacherMap2.get(item.platform.trim());
+                counter++;
+                teacherMap2.set(item.platform.trim(), counter);
+              } else {
+                teacherMap2.set(item.platform.trim(), 1);
+              }
             }
-          }
-          if (item.Area === value) {
-            if (teacherMap2.has(item.platform.trim())) {
-              let counter = teacherMap2.get(item.platform.trim());
-              counter++;
-              teacherMap2.set(item.platform.trim(), counter);
-            } else {
-              teacherMap2.set(item.platform.trim(), 1);
+            if (item.Area === value) {
+              if (teacherMap2.has(item.platform.trim())) {
+                let counter = teacherMap2.get(item.platform.trim());
+                counter++;
+                teacherMap2.set(item.platform.trim(), counter);
+              } else {
+                teacherMap2.set(item.platform.trim(), 1);
+              }
             }
           }
         }

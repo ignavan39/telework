@@ -1,17 +1,16 @@
 <template>
-  <div class="small" v-if="datacollection">
-    <line-chart :chartData="datacollection" :options="options"></line-chart>
+  <div>
+    <div v-if="datacollection" class="small">
+      <pie :options="options" :chartData="datacollection"></pie>
+    </div>
   </div>
 </template>
 
-<script>
-import LineChart from "./LineChart.js";
 
+<script>
+import Pie from "../components/PieChart.js";
 export default {
-  components: {
-    LineChart
-  },
-  props: ["keys", "label", "values"],
+  name: "TimeOnJob",
   data() {
     return {
       datacollection: null,
@@ -43,27 +42,44 @@ export default {
       }
     };
   },
+
+  props: ["teachers"],
+  components: {
+    Pie
+  },
   mounted() {
     this.fillData();
   },
   methods: {
     fillData: function() {
+      let timeMap = new Map();
+      for (let item of this.teachers) {
+        if (timeMap.has(item.timeOnTelephone.trim())) {
+          let counter = timeMap.get(item.timeOnTelephone.trim());
+          counter++;
+          timeMap.set(item.timeOnTelephone.trim(), counter);
+        } else {
+          timeMap.set(item.timeOnTelephone.trim(), 1);
+        }
+      }
       const keys1 = [];
       const values1 = [];
       let size = 0;
       let idx = 0;
-      for (let i of this.keys) {
+      for (let i of timeMap.keys()) {
         keys1[idx] = i;
         idx++;
       }
       idx = 0;
-      for (let i of this.values) {
+      for (let i of timeMap.values()) {
         size += i;
         values1[idx] = i;
         idx++;
       }
       let arr = [];
+      this.series = [];
       for (let i = 0; i < values1.length; i++) {
+        this.series[i] = values1[i] / size;
         arr[i] = {
           label: `${i + 1}:${keys1[i]}(${((values1[i] / size) * 100).toFixed(
             2
@@ -73,27 +89,11 @@ export default {
         };
       }
       this.datacollection = {
-        labels: [`${this.label} (${size} человек)`],
+        labels: [`(${size} человек)`],
         datasets: arr
       };
-      //    console.log(this.datacollection);
-      //  console.log()
+      console.log(this.datacollection);
     }
   }
 };
 </script>
-
-<style>
-.small {
-  max-width: 600px;
-  margin: 50px auto;
-  width: 100%;
-}
-@media screen and(max-width: 800px) {
-  .small {
-    max-width: 600px;
-    min-width: 400px;
-    margin: auto;
-  }
-}
-</style>
