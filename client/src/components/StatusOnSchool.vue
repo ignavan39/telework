@@ -109,7 +109,7 @@ export default {
                 teacherMap2.set(item.platform.trim(), 1);
               }
             }
-            if (item.Area === value) {
+            if (item.Area.trim() === value) {
               if (teacherMap2.has(item.platform.trim())) {
                 let counter = teacherMap2.get(item.platform.trim());
                 counter++;
