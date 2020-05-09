@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+   
      <div v-if="!loader">
       <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div></div>
     </div>
@@ -148,5 +149,61 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.header{
+    background-color: rgb(0, 17, 63);
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    
+   
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.title{
+    font-size: 65px;
+    color: #fcac45;
+    text-align: center;
+    box-shadow: 3px 2px 110px rgb(0, 0, 0);
+    letter-spacing: 3px;
+}
+.sub__title{
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top:15px;  
+}
+
+/* Media header */
+
+@media (max-width: 1200px){
+    .header{
+        height: 200px;
+    }
+    .title{
+       font-size: 40px;
+    }
+    .sub__title{
+        font-size: 15px;
+    }
+}
+@media (max-width: 461px){
+    .header{
+        height: 150px;
+    }
+    .title{
+       font-size: 20px;
+    }
+    .sub__title{
+        font-size: 10px;
+    }
 }
 </style>
