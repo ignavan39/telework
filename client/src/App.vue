@@ -1,17 +1,21 @@
 <template>
   <div id="app">
-   
-     <div v-if="!loader">
-      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div></div>
+    <div v-if="!loader">
+      <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-    
+
     <div v-if="teachers">
       <StatusSchool :optionSet="areaSet" :teachers="teachers" :choice="'area'"></StatusSchool>
       <hr />
 
       <StatusSchool :optionSet="schoolSet" :teachers="teachers" :choice="'school'"></StatusSchool>
       <!--  <TimeOnJob :teachers="teachers"></TimeOnJob>-->
-    
     </div>
   </div>
 </template>
@@ -31,11 +35,10 @@ export default {
     teachers: [],
     schoolSet: {},
     areaSet: {},
-    loader: false,
+    loader: false
   }),
   async mounted() {
-   await 
-      axios
+    await axios
       .get("/api")
       .then(response => {
         console.log(response.data);
@@ -46,7 +49,7 @@ export default {
           this.schoolSet.add(item.school.trim());
           this.areaSet.add(item.Area.trim());
         }
-        
+
         this.loader = true;
       })
       .catch(e => {
@@ -74,7 +77,7 @@ export default {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #dfc;
+  background: rgb(2, 70, 82);
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {
@@ -150,60 +153,57 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.header{
-    background-color: rgb(0, 17, 63);
-    width: 100%;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: 'Raleway', sans-serif;
-    
-   
-
+.header {
+  background-color: rgb(0, 17, 63);
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
 }
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.title{
-    font-size: 65px;
-    color: #fcac45;
-    text-align: center;
-    box-shadow: 3px 2px 110px rgb(0, 0, 0);
-    letter-spacing: 3px;
+.title {
+  font-size: 65px;
+  color: #fcac45;
+  text-align: center;
+  box-shadow: 3px 2px 110px rgb(0, 0, 0);
+  letter-spacing: 3px;
 }
-.sub__title{
-    font-size: 20px;
-    color: #fff;
-    text-align: center;
-    letter-spacing: 2px;
-    margin-top:15px;  
+.sub__title {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 15px;
 }
 
 /* Media header */
 
-@media (max-width: 1200px){
-    .header{
-        height: 200px;
-    }
-    .title{
-       font-size: 40px;
-    }
-    .sub__title{
-        font-size: 15px;
-    }
+@media (max-width: 1200px) {
+  .header {
+    height: 200px;
+  }
+  .title {
+    font-size: 40px;
+  }
+  .sub__title {
+    font-size: 15px;
+  }
 }
-@media (max-width: 461px){
-    .header{
-        height: 150px;
-    }
-    .title{
-       font-size: 20px;
-    }
-    .sub__title{
-        font-size: 10px;
-    }
+@media (max-width: 461px) {
+  .header {
+    height: 150px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .sub__title {
+    font-size: 10px;
+  }
 }
 </style>
