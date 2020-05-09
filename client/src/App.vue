@@ -17,10 +17,12 @@
       <StatusSchool :optionSet="schoolSet" :teachers="teachers" :choice="'school'"></StatusSchool>
       <!--  <TimeOnJob :teachers="teachers"></TimeOnJob>-->
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from "../src/components/FooterComponent";
 import axios from "axios";
 import StatusSchool from "../src/components/StatusOnSchool";
 //import TimeOnJob from "../src/components/TimeForJob";
@@ -29,7 +31,8 @@ export default {
 
   components: {
     // TimeOnJob,
-    StatusSchool
+    StatusSchool,
+    Footer
   },
   data: () => ({
     teachers: [],
@@ -41,7 +44,7 @@ export default {
     await axios
       .get("/api")
       .then(response => {
-        console.log(response.data);
+        //  console.log(response.data);
         this.teachers = response.data;
         this.areaSet = new Set();
         this.schoolSet = new Set();
@@ -153,7 +156,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.header {
+header {
   background-color: rgb(0, 17, 63);
   width: 100%;
   height: 400px;
@@ -175,7 +178,7 @@ export default {
   letter-spacing: 3px;
 }
 .sub__title {
-  font-size: 20px;
+  font-size: 30px;
   color: #fff;
   text-align: center;
   letter-spacing: 2px;

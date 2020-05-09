@@ -149,7 +149,7 @@ export default {
         labels: [`${value} (${size} человек)`],
         datasets: arr
       };
-      console.log(this.datacollection);
+     // console.log(this.datacollection);
     }
   }
 };
@@ -158,8 +158,9 @@ export default {
 .small {
   max-width: 600px;
   margin: 50px auto;
-  width: 100%;
+  width: 80%;
   height: 100%;
+  text-align: center;
 }
 @media screen and(max-width: 800px) {
   .small {
