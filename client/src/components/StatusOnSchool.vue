@@ -149,7 +149,7 @@ export default {
         labels: [`${value} (${size} человек)`],
         datasets: arr
       };
-     // console.log(this.datacollection);
+      // console.log(this.datacollection);
     }
   }
 };

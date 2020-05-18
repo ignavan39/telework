@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="datacollection" class="small">
-      <pie :options="options" :chartData="datacollection"></pie>
+      <Pie :options="options" :chartData="datacollection"></Pie>
     </div>
   </div>
 </template>

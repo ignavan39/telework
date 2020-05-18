@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div v-if="!loader">
+    <div v-if="!getLoader">
       <div class="lds-roller">
         <div></div>
         <div></div>
@@ -10,12 +10,13 @@
       </div>
     </div>
 
-    <div v-if="teachers">
-      <StatusSchool :optionSet="areaSet" :teachers="teachers" :choice="'area'"></StatusSchool>
+    <div v-if="dumpTeachers">
+      <StatusSchool :optionSet="getAreaSet" :teachers="dumpTeachers" :choice="'area'"></StatusSchool>
       <hr />
 
-      <StatusSchool :optionSet="schoolSet" :teachers="teachers" :choice="'school'"></StatusSchool>
+      <StatusSchool :optionSet="getSchoolSet" :teachers="dumpTeachers" :choice="'school'"></StatusSchool>
       <!--  <TimeOnJob :teachers="teachers"></TimeOnJob>-->
+    
     </div>
     <Footer />
   </div>
@@ -23,41 +24,22 @@
 
 <script>
 import Footer from "../src/components/FooterComponent";
-import axios from "axios";
+
 import StatusSchool from "../src/components/StatusOnSchool";
 //import TimeOnJob from "../src/components/TimeForJob";
+import {mapGetters,mapActions} from 'vuex'
 export default {
   name: "App",
 
   components: {
-    // TimeOnJob,
+   //  TimeOnJob,
     StatusSchool,
     Footer
   },
-  data: () => ({
-    teachers: [],
-    schoolSet: {},
-    areaSet: {},
-    loader: false
-  }),
+  methods: mapActions(['fetchTeachers']),
+  computed: mapGetters(['dumpTeachers','getAreaSet','getSchoolSet','getLoader']),
   async mounted() {
-    await axios
-      .get("/api")
-      .then(response => {
-        //  console.log(response.data);
-        this.teachers = response.data;
-        this.areaSet = new Set();
-        this.schoolSet = new Set();
-        for (let item of this.teachers) {
-          this.schoolSet.add(item.school.trim());
-          this.areaSet.add(item.Area.trim());
-        }
-
-        this.loader = true;
-      })
-      .catch(e => {
-        console.error(e);
-      });
+    this.fetchTeachers()
   }
 };
 </script>
