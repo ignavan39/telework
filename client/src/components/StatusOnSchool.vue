@@ -1,21 +1,27 @@
 <template>
-  <div>
+  <div class="section">
     <h3 v-if="choice==='school'">Выберете школу</h3>
     <h3 v-else-if="choice==='area'">Выберете Район</h3>
-    <select v-model="filter">
+    <select
+      v-model="filter"
+      class="btn dropdown-trigger blue darken-4 "
+      data-target="dropdown2"
+      id="dropdown2"
+    >
       <option v-if="choice==='area'" value="Все">Всe</option>
-      <option v-for="(item,i) of optionSet" :key="i" value:item>{{item}}</option>
+      <option v-for="(item,i) of optionSet" :key="i" value:item >{{item}}</option>
     </select>
-    <div v-if="datacollection" class="small">
-      <line-chart :chartData="datacollection" :options="options"></line-chart>
+    <div v-if="datacollection">
+      <bar-chart :chartData="datacollection" :options="options"></bar-chart>
     </div>
+
     <!--  </div>-->
   </div>
 </template>
 
 
 <script>
-import LineChart from "./LineChart.js";
+import BarChart from "./BarChart.js";
 //import Status1 from "../components/Status";
 export default {
   props: ["optionSet", "teachers", "choice"],
@@ -69,7 +75,7 @@ export default {
   },
   components: {
     // Status1
-    LineChart
+    BarChart
   },
   watch: {
     filter(value) {
@@ -154,19 +160,3 @@ export default {
   }
 };
 </script>
-<style scoped>
-.small {
-  max-width: 600px;
-  margin: 50px auto;
-  width: 80%;
-  height: 100%;
-  text-align: center;
-}
-@media screen and(max-width: 800px) {
-  .small {
-    max-width: 600px;
-    min-width: 400px;
-    margin: auto;
-  }
-}
-</style>

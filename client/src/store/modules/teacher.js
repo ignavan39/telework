@@ -9,9 +9,6 @@ export default {
                     const areaSet = new Set();
                     const schoolSet = new Set();
 
-                    // this.teachers = response.data;
-                    //this.areaSet = new Set();
-                    //this.schoolSet = new Set();
                     for (let item of teachers) {
                         schoolSet.add(item.school.trim());
                         areaSet.add(item.Area.trim());
@@ -19,8 +16,8 @@ export default {
                     ctx.commit('updateTeachers', teachers);
                     ctx.commit('updateAreaSet', areaSet);
                     ctx.commit('updateSchoolSet', schoolSet);
-                    let loader = true;
-                    ctx.commit('load', loader);
+                    // let loader = true;
+                    ctx.commit('load', true);
                     //loader = true;
                 })
                 .catch(e => {
@@ -46,7 +43,7 @@ export default {
         teachers: [],
         areaSet: null,
         schoolSet: null,
-        loader: {}
+        loader: false
     },
     getters: {
         dumpTeachers(state) {
