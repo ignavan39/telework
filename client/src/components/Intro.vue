@@ -1,12 +1,12 @@
 <template>
-  <header class="header">
+  <div class="wrapper blue darken-4 page-footer">
     <div class="container">
       <h2 class="title">Статистические данные</h2>
       <p
-        class="sub__title"
+        class="white-text sub__title"
       >Информация о том ,какими платформами пользуются учителя на дистанционном обучении , вся информация основана на ваших ответах в гугл форме (спасибо за участие!)</p>
     </div>
-  </header>
+  </div>
 </template>
 <script>
 export default {
@@ -14,57 +14,77 @@ export default {
 };
 </script>
 <style scoped>
-header {
-  background-color: #0d47a1;
-  width: 100%;
-  height: 400px;
+.wrapper {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  font-family: "Raleway", sans-serif;
-  text-align: center;
+  align-items: center;
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+@keyframes slideTitleButtom {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 10;
+  }
+}
+@keyframes slideTitleLeft {
+  from {
+    margin-right: 100%;
+    width: 500%;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
+}
 .title {
-  font-size: 65px;
+  animation-duration: 2s;
+  animation-name: slideTitleLeft;
+  font-size: 70px;
   color: #fcac45;
   text-align: center;
   letter-spacing: 3px;
 }
 .sub__title {
-  font-size: 30px;
+  animation-duration: 6s;
+  animation-name: slideTitleButtom;
+  margin-top: 10rem;
+  font-size: 20px;
   color: #fff;
   text-align: center;
-  letter-spacing: 2px;
   margin-top: 15px;
 }
 
 /* Media header */
 
 @media (max-width: 1200px) {
-  .header {
-    height: 200px;
+  .wrapper {
+    height: 50vh;
   }
   .title {
-    font-size: 40px;
+    font-size: 80px;
   }
   .sub__title {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 @media (max-width: 461px) {
-  .header {
-    height: 150px;
+  .wrapper {
+    height: 75vh;
   }
   .title {
-    font-size: 20px;
+    font-size: 30px;
   }
   .sub__title {
-    font-size: 10px;
+    font-size: 15px;
   }
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <intro />
+  
+  
     <div v-if="!getLoader">
       <div class="progress">
         <div class="indeterminate"></div>
@@ -8,10 +10,9 @@
     </div>
     <div class="container">
       <div v-if="dumpTeachers">
-        <StatusSchool :optionSet="getAreaSet" :teachers="dumpTeachers" :choice="'area'"></StatusSchool>
-        <hr />
-
-        <StatusSchool :optionSet="getSchoolSet" :teachers="dumpTeachers" :choice="'school'"></StatusSchool>
+        <Status :optionSet="getAreaSet" :teachers="dumpTeachers" :choice="'area'"></Status>
+      
+        <Status :optionSet="getSchoolSet" :teachers="dumpTeachers" :choice="'school'"></Status>
       </div>
     </div>
     <Footer />
@@ -21,13 +22,13 @@
 <script>
 import Footer from "../src/components/Footer";
 import Intro from "../src/components/Intro";
-import StatusSchool from "../src/components/StatusOnSchool";
+import Status from "../src/components/Status";
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "App",
 
   components: {
-    StatusSchool,
+    Status,
     Footer,
     Intro
   },

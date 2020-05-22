@@ -7,17 +7,21 @@
           <p class="grey-text text-lighten-4">Ваши ответы помогают продвижению моего проекта.</p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Ссылки</h5>
+          <h5 class="amber-text">Ссылки</h5>
           <ul>
-            <li>
-              <a class="grey-text text-lighten-3" href="https://vk.com/necrobutcher87">Мой ВК</a>
-            </li>
-            <li>
+            <li class="card-panel hoverable col l12">
               <a
-                class="grey-text text-lighten-3"
+                class="blue-text text-darken-4 scale-demo"
+                href="https://vk.com/necrobutcher87"
+              >Мой ВК</a>
+            </li>
+            <li class="card-panel hoverable col l12">
+              <a
+                class="blue-text text-darken-4 scale-demo"
                 href="https://www.instagram.com/lugburz13/"
               >Мой Инстаграмм</a>
             </li>
+            <li class>ivanignatenko28@gmail.com</li>
           </ul>
         </div>
       </div>
