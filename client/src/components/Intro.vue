@@ -1,11 +1,11 @@
 <template>
   <header class="header">
     <div class="container">
-    <h2 class="title">Статистические данные</h2>
-    <p
-      class="sub__title"
-    >Информация о том ,какими платформами пользуются учителя на дистанционном обучении , вся информация основана на ваших ответах в гугл форме (спасибо за участие!)</p>
- </div>
+      <h2 class="title">Статистические данные</h2>
+      <p
+        class="sub__title"
+      >Информация о том ,какими платформами пользуются учителя на дистанционном обучении , вся информация основана на ваших ответах в гугл форме (спасибо за участие!)</p>
+    </div>
   </header>
 </template>
 <script>
@@ -22,6 +22,7 @@ header {
   flex-direction: column;
   justify-content: center;
   font-family: "Raleway", sans-serif;
+  text-align: center;
 }
 * {
   box-sizing: border-box;
