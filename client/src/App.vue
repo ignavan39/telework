@@ -1,21 +1,20 @@
 <template>
-
   <div id="app">
     <intro />
     <div v-if="!getLoader">
       <div class="progress">
-      <div class="indeterminate"></div>
-   </div>
+        <div class="indeterminate"></div>
+      </div>
     </div>
     <div class="container">
-    <div v-if="dumpTeachers">
-      <StatusSchool :optionSet="getAreaSet" :teachers="dumpTeachers" :choice="'area'"></StatusSchool>
-      <hr />
+      <div v-if="dumpTeachers">
+        <StatusSchool :optionSet="getAreaSet" :teachers="dumpTeachers" :choice="'area'"></StatusSchool>
+        <hr />
 
-      <StatusSchool :optionSet="getSchoolSet" :teachers="dumpTeachers" :choice="'school'"></StatusSchool>
+        <StatusSchool :optionSet="getSchoolSet" :teachers="dumpTeachers" :choice="'school'"></StatusSchool>
+      </div>
     </div>
-  </div>
-  <Footer />
+    <Footer />
   </div>
 </template>
 
@@ -44,5 +43,12 @@ export default {
   }
 };
 </script>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+
+</style>
 
 

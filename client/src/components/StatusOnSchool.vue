@@ -1,7 +1,7 @@
 <template>
   <div class="section">
-    <h3 v-if="choice==='school'">Выберете школу</h3>
-    <h3 v-else-if="choice==='area'">Выберете Район</h3>
+    <h4 v-if="choice==='school'">Выберите школу</h4>
+    <h4 v-else-if="choice==='area'">Выберите Район</h4>
     <select
       v-model="filter"
       class="btn dropdown-trigger blue darken-4 "
