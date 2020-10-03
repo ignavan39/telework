@@ -10,9 +10,9 @@
     </div>
     <div class="container">
       <div v-if="dumpTeachers">
-        <Status :optionSet="getAreaSet" :teachers="dumpTeachers" :choice="'area'"></Status>
+        <Pie :optionSet="getAreaSet" :teachers="dumpTeachers" :optionName="'район'"></Pie>
       
-        <Status :optionSet="getSchoolSet" :teachers="dumpTeachers" :choice="'school'"></Status>
+        <Chart :optionSet="getSchoolSet" :teachers="dumpTeachers" :choice="'school'" :optionName="'школу'"></Chart>
       </div>
     </div>
     <Footer />
@@ -22,15 +22,17 @@
 <script>
 import Footer from "../src/components/Footer";
 import Intro from "../src/components/Intro";
-import Status from "../src/components/Status";
+import Chart from "../src/components/Chart";
+import Pie from "../src/components/Pie";
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "App",
 
   components: {
-    Status,
+    Chart,
     Footer,
-    Intro
+    Intro,
+    Pie
   },
   methods: mapActions(["fetchTeachers"]),
   computed: mapGetters([

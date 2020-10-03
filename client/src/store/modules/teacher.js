@@ -9,10 +9,10 @@ export default {
                     const areaSet = new Set();
                     const schoolSet = new Set();
 
-                    for (let item of teachers) {
+                    teachers.map((item) => {
                         schoolSet.add(item.school.trim());
-                        areaSet.add(item.Area.trim());
-                    }
+                        areaSet.add(item.state.trim());
+                    })
                     ctx.commit('updateTeachers', teachers);
                     ctx.commit('updateAreaSet', areaSet);
                     ctx.commit('updateSchoolSet', schoolSet);
