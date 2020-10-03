@@ -1,6 +1,6 @@
 {
     "name": "telework",
-    "version": "1.0.0",
+    "version": "1.0.5",
     "description": "",
     "main": "back.js",
     "scripts": {
@@ -9,9 +9,9 @@
     },
     "author": "Ivan Ignatenko <ivanignatenko28@gmail.com>",
     "engines": {
-        "node": "13.7.0"
+        "node": "14.13.0"
     },
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "axios": "^0.19.2",
         "connect-history-api-fallback": "^1.6.0",
@@ -20,5 +20,6 @@
     },
     "devDependencies": {
         "nodemon": "^2.0.3"
-    }
+    },
+    "repository": "https://github.com/kitt3911/Telework"
 }
