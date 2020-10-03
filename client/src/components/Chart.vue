@@ -1,7 +1,6 @@
 <template>
   <div class="section">
-    <h4 v-if="choice==='school'">Выберите школу</h4>
-    <h4 v-else-if="choice==='area'">Выберите Район</h4>
+    <h4>Выберите {{optionName}}</h4>
     <select
       v-model="filter"
       class="btn dropdown-trigger blue darken-4 "
@@ -22,10 +21,9 @@
 
 <script>
 import BarChart from "./BarChart.js";
-//import Status1 from "../components/Status";
 export default {
-  props: ["optionSet", "teachers", "choice"],
-  name: "StatusSchool",
+  props: ["optionSet", "teachers", "choice" , "optionName"],
+  name: "Chart",
   data() {
     return {
       filter: "", //this.choice === 'area' ? 'all' : '',
@@ -74,7 +72,6 @@ export default {
     }
   },
   components: {
-    // Status1
     BarChart
   },
   watch: {
@@ -115,7 +112,7 @@ export default {
                 teacherMap2.set(item.platform.trim(), 1);
               }
             }
-            if (item.Area.trim() === value) {
+            if (item.state.trim() === value) {
               if (teacherMap2.has(item.platform.trim())) {
                 let counter = teacherMap2.get(item.platform.trim());
                 counter++;
