@@ -12,13 +12,13 @@
             <li class="card-panel hoverable col l12">
               <a
                 class="blue-text text-darken-4 scale-demo"
-                href="https://vk.com/necrobutcher87"
+                href="https://vk.com/kitt3911"
               >Мой ВК</a>
             </li>
             <li class="card-panel hoverable col l12">
               <a
                 class="blue-text text-darken-4 scale-demo"
-                href="https://www.instagram.com/lugburz13/"
+                href="https://www.instagram.com/kitt39111/"
               >Мой Инстаграмм</a>
             </li>
             <li class>ivanignatenko28@gmail.com</li>

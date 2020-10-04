@@ -30,19 +30,7 @@ export default {
       size: Number,
       root: "",
       datacollection: null,
-      color: [
-        "rgb(25, 152, 161)",
-        "rgb(190, 255, 115)",
-        "red",
-        "rgb(148, 42, 0)",
-        "rgb(0, 85, 196)",
-        "rgb(0, 190, 196)",
-        "rgb(255, 224, 139)",
-        "rgb(24, 67, 255)",
-        "rgb(21, 104, 0)",
-        "#fcac45",
-        "#f87979"
-      ],
+
       options: {
         responsive: true,
         maintainAspectRatio: false,
@@ -124,28 +112,33 @@ export default {
           }
         }
       }
-      const keys1 = [];
-      const values1 = [];
+      const keys = [];
+      const values = [];
       let size = 0;
       let idx = 0;
       for (let i of teacherMap2.keys()) {
-        keys1[idx] = i;
+        keys[idx] = i;
         idx++;
       }
       idx = 0;
       for (let i of teacherMap2.values()) {
         size += i;
-        values1[idx] = i;
+        values[idx] = i;
         idx++;
       }
       let arr = [];
-      for (let i = 0; i < values1.length; i++) {
+       const colors = [];
+      for(let i = 0; i < values.length;i++){
+          colors.push(`rgb(${Math.random()*250},${Math.random()*50+120},${Math.random()*250})`)
+          
+      }
+      for (let i = 0; i < values.length; i++) {
         arr[i] = {
-          label: `${i + 1}:${keys1[i]}(${((values1[i] / size) * 100).toFixed(
+          label: `${i + 1}:${keys[i]}(${((values[i] / size) * 100).toFixed(
             2
           )}%)`,
-          backgroundColor: this.color[i],
-          data: [values1[i]]
+          backgroundColor: colors[i],
+          data: [values[i]]
         };
       }
       this.datacollection = {

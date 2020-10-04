@@ -13,6 +13,8 @@
         <Pie :optionSet="getAreaSet" :teachers="dumpTeachers" :optionName="'район'"></Pie>
       
         <Chart :optionSet="getSchoolSet" :teachers="dumpTeachers" :choice="'school'" :optionName="'школу'"></Chart>
+        <Readiness :optionSet="getSchoolSet" :teachers="dumpTeachers" :optionName="'школу'"></Readiness>
+       
       </div>
     </div>
     <Footer />
@@ -24,6 +26,8 @@ import Footer from "../src/components/Footer";
 import Intro from "../src/components/Intro";
 import Chart from "../src/components/Chart";
 import Pie from "../src/components/Pie";
+import Readiness from '../src/components/Readiness'
+//import TimeOnTelephone from '../src/components/TimeOnTelephone'
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "App",
@@ -32,7 +36,9 @@ export default {
     Chart,
     Footer,
     Intro,
-    Pie
+    Pie,
+    Readiness,
+   // TimeOnTelephone
   },
   methods: mapActions(["fetchTeachers"]),
   computed: mapGetters([

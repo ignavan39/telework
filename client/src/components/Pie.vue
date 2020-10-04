@@ -33,19 +33,6 @@ export default {
       size: Number,
       root: "",
       datacollection: null,
-      color: [
-        "rgb(25, 152, 161)",
-        "rgb(190, 255, 115)",
-        "red",
-        "rgb(148, 42, 0)",
-        "rgb(0, 85, 196)",
-        "rgb(0, 190, 196)",
-        "rgb(255, 224, 139)",
-        "rgb(24, 67, 255)",
-        "rgb(21, 104, 0)",
-        "#fcac45",
-        "#f87979",
-      ],
       options: {
         responsive: true,
         maintainAspectRatio: false,
@@ -117,23 +104,30 @@ export default {
         idx++;
       }
       idx = 0;
+      let sum = 0
       for (let i of teacherMap2.values()) {
         values[idx] = i;
+        sum += values[idx]
         idx++;
       }
       const colors = [];
       for(let i = 0; i < values.length;i++){
-          colors.push(`rgb(${Math.random()*250},${Math.random()*250},${Math.random()*250})`)
+          colors.push(`rgb(${Math.random()*250},${Math.random()*50+120},${Math.random()*250})`)
           
       }
-      //console.log(`values = ` + values.length)
+      console.log(`values = ${10.53 + 31.58 + 26.32 +31.58}`)
+      let labels = keys.map((item,idx)=>(
+        `${item}(${((values[idx] / sum) * 100).toFixed(
+            2
+          )}%)`
+      ))
       this.datacollection = {
-        labels:[...keys],
+        labels:[...labels],
         
         datasets: [{
              data : [...values],
-             borderWidth: 1,
-             borderColor:[...colors],
+             borderWidth: 0.8,
+             borderColor:['#fff'],
              backgroundColor:[...colors]
         }],
       };
