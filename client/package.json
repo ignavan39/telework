@@ -1,31 +1,32 @@
 {
-  "name": "client",
+  "name": "telework",
   "version": "0.1.0",
   "private": true,
-  "author": "kkit3911",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "main": "index.js",
   "dependencies": {
-    "axios": "^0.19.2",
-    "chart.js": "^2.9.3",
-    "core-js": "^3.6.4",
-    "materialize-css": "^1.0.0-rc.2",
-    "vue": "^2.6.11",
-    "vue-chartjs": "^3.5.0",
-    "vuex": "^3.3.0"
+    "core-js": "^3.6.5",
+    "vue": "^3.0.1",
+    "vue-class-component": "^8.0.0-0",
+    "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.6",
-    "@vue/cli-plugin-eslint": "~4.5.6",
-    "@vue/cli-service": "~4.5.6",
+    "@typescript-eslint/eslint-plugin": "4.4.1",
+    "@typescript-eslint/parser": "4.4.1",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "^4.5.7",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-typescript": "7.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "eslint": "7.11.0",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "typescript": "^4.0.3"
   },
   "eslintConfig": {
     "root": true,
@@ -33,11 +34,12 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+      "plugin:vue/vue3-essential",
+      "eslint:recommended",
+      "@vue/typescript"
     ],
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "@typescript-eslint/parser"
     },
     "rules": {}
   },
@@ -45,8 +47,5 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ],
-  "_id": "client@0.1.0",
-  "license": "MIT",
-  "readme": "ERROR: No README data found!"
+  ]
 }
