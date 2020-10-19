@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import teachers from "@/store/modules/teachers";
 
 export default createStore({
   state: {
@@ -8,5 +9,6 @@ export default createStore({
   actions: {
   },
   modules: {
+    teachers
   }
 })
