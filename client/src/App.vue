@@ -1,5 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
+  <test-component></test-component>
 </template>
 
 <script lang="ts">
@@ -10,9 +11,13 @@
 })
 */
 import {defineComponent} from "@vue/composition-api";
+import testComponent from "@/components/testComponent.vue";
 
 export default defineComponent({
   name: 'App',
+  components: {
+    testComponent
+  }
 })
 </script>
 

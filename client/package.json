@@ -14,7 +14,8 @@
     "core-js": "^3.6.5",
     "vue": "^3.0.1",
     "vue-class-component": "^8.0.0-0",
-    "vuex": "^4.0.0-0"
+    "vuex": "^4.0.0-0",
+    "vuex-module-decorators": "^1.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.11.10",
