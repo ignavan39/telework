@@ -2,16 +2,17 @@
 
 ## Just my project for collecting statistics
 Statistics on web platforms used by quarantined teachers on
-04/12/20 work done on express + Vue.js + Vue-charts
+04/12/20 work done on express + React + (react-charts)[https://canvasjs.com/react-charts/]
 
 -----
 
-## back.js
+## Back
 
+to start
 ```
 npm init
 ```
-or 
+or if you use yarn
 ```
 yarn
 ```
@@ -23,12 +24,13 @@ yarn dev
 ------
 ## Client
 
+to start
 ```
 yarn
 ```
 #### Start for devepolment
 ```
-yarn serve
+yarn start
 ```
 #### Build
 
