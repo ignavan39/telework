@@ -5,8 +5,15 @@ import logo from './logo.svg';
 import './App.css';
 import StatesChart from './charts/StatesChart'
 import SchoolChart from './charts/SchoolChart'
+
+import Answer from '../src/store/teachers'
+
 const App = () => {
 
+  useEffect(() => {
+    Answer.fetchAnswers()
+
+  }, [])
 
   return (
     <div className="App">

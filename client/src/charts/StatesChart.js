@@ -13,11 +13,7 @@ const StatesChart = () => {
     const answersMap = new Map()
 
     const [state,setState] = useState('all')
-    useEffect(() => {
-        Answer.fetchAnswers()
-
-    }, [])
-
+  
     const parseData = () => {
 
 
@@ -29,6 +25,7 @@ const StatesChart = () => {
     }
     console.log(state)
     console.log(stateSet)
+    console.log(answers)
     const options = {
         animationEnabled: true,
         exportEnabled: true,
@@ -52,7 +49,7 @@ const StatesChart = () => {
     }
 
     return (
-        <div>
+        <div style={{}}>
         <select onChange={selectHandler}>
             <option defaultValue='all'>Все</option>
             {
