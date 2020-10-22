@@ -12,7 +12,7 @@ const StatesChart = () => {
     const {stateSet} = Answer
     const answersMap = new Map()
 
-
+    const [state,setState] = useState('all')
     useEffect(() => {
         Answer.fetchAnswers()
 
@@ -22,8 +22,12 @@ const StatesChart = () => {
 
 
     }
-
-
+    const selectHandler = (event) => {
+        event.persist();
+        setState((prev)=> (event.target.value))
+        
+    }
+    console.log(state)
     console.log(stateSet)
     const options = {
         animationEnabled: true,
@@ -48,10 +52,13 @@ const StatesChart = () => {
     }
 
     return (
-        <>
-        <select>
+        <div>
+        <select onChange={selectHandler}>
+            <option defaultValue='all'>Все</option>
             {
-                
+                stateSet.map((item,idx)=>(
+                    <option value={item} key={idx} >{item}</option>
+                ))
             }
         </select>
         <div style={{width:'45vw', margin:'auto 2vw'}}>
@@ -59,7 +66,7 @@ const StatesChart = () => {
             /* onRef={ref => this.chart = ref} */
             />
         </div>
-        </>
+        </div>
     )
 }
 
