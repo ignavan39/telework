@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { observer } from "mobx-react";
 import logo from './logo.svg';
 import './App.css';
-
+import './canvasjs/canvasjs.react'
 
 import Answer from '../src/store/teachers'
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
 
 
   console.log(Answer.answers)
-  
+
   return (
     <div className="App">
       <header className="App-header">
