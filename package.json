@@ -9,7 +9,7 @@
     },
     "author": "Ivan Ignatenko <ivanignatenko28@gmail.com>",
     "engines": {
-        "node": "14.13.0"
+        "node": "14.14.0"
     },
     "license": "MIT",
     "dependencies": {
