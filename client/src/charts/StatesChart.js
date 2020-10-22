@@ -23,9 +23,6 @@ const StatesChart = () => {
         setState((prev)=> (event.target.value))
         
     }
-    console.log(state)
-    console.log(stateSet)
-    console.log(answers)
     const options = {
         animationEnabled: true,
         exportEnabled: true,
@@ -49,7 +46,7 @@ const StatesChart = () => {
     }
 
     return (
-        <div style={{}}>
+        <div style={{height:'60vh'}}>
         <select onChange={selectHandler}>
             <option defaultValue='all'>Все</option>
             {
