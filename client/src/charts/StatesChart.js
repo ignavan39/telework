@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { observer } from "mobx-react";
 
@@ -12,17 +12,19 @@ const StatesChart = () => {
     const {stateSet} = Answer
     const answersMap = new Map()
 
+
     useEffect(() => {
         Answer.fetchAnswers()
+
     }, [])
 
     const parseData = () => {
 
-        
+
     }
 
 
-    console.log(Answer.answers)
+    console.log(stateSet)
     const options = {
         animationEnabled: true,
         exportEnabled: true,
@@ -46,11 +48,18 @@ const StatesChart = () => {
     }
 
     return (
+        <>
+        <select>
+            {
+                
+            }
+        </select>
         <div style={{width:'45vw', margin:'auto 2vw'}}>
             <CanvasJSChart options={options}
             /* onRef={ref => this.chart = ref} */
             />
         </div>
+        </>
     )
 }
 

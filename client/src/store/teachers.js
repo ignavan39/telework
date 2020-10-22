@@ -1,13 +1,13 @@
 import Axios from 'axios'
-import {action, observable,makeObservable } from 'mobx'
+import {action, observable,makeObservable, computed } from 'mobx'
 import env from '../env'
 
 class Answers {
 
     answers = [];
-    stateSet = {};
+    stateSet = [];
 
-    schoolSet = {};
+    schoolSet = [];
 
     loader = false
     constructor(){
@@ -15,19 +15,23 @@ class Answers {
             answers:observable,
             stateSet:observable,
             schoolSet:observable,
-            fetchAnswers:action
+            fetchAnswers:action,
         })
     }
+
     async fetchAnswers() {
        const raw =  await Axios.get("http://localhost:8080/api")
        this.answers = raw.data;
-       this.stateSet = new Set();
-       this.schoolSet = new Set()
+       let stateSet = new Set();
+       let schoolSet = new Set()
 
        this.answers.map((item) => {
-           this.schoolSet.add(item.school.trim())
-           this.stateSet.add(item.state.trim())
+           schoolSet.add(item.school.trim())
+           stateSet.add(item.state.trim())
        })
+
+       this.schoolSet = [...schoolSet.keys()]
+       this.stateSet = [...stateSet.keys()]
     }
 
 
