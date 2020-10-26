@@ -1,11 +1,8 @@
 import React from 'react'
 
 import { observer } from "mobx-react";
-import CanvasReactJs from '../canvasjs/canvasjs.react'
 
-const CanvasJs = CanvasReactJs.CanvasJS
-const CanvasJSChart = CanvasReactJs.CanvasJSChart
-
+/*
 const SchoolChart = () => {
 
     const options = {
@@ -27,13 +24,14 @@ const SchoolChart = () => {
         }
         ]
     }
-    
+
     return (
     <div style={{width:'45vw', margin:'auto 2vw'}}>
-        <CanvasJSChart options = {options} 
+        <CanvasJSChart options = {options}
             /* onRef={ref => this.chart = ref} */
+/*
         />  </div>
     );
 }
-
+*/
 export default observer(SchoolChart )

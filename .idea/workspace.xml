@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:19-migrate-project-on-react" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36ece946-d399-4370-85e7-48bdbfcf4d1b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/canvasjs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/canvasjs.react.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/animated-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/chart-from-json-data.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/chart-with-axis-scale-breaks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/chart-with-crosshair.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/chart-with-custom-legend-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/chart-with-image-overlay.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/chart-with-index-data-label.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/chart-with-inverted-reversed-axis.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/chart-with-logarithmic-axis.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/chart-with-secondary-axis.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/chart-with-zoom-pan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/dynamic-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/interactive-draggable-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/multi-series-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/null-data-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/01-overview/performance-demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/dashed-line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/dynamic-spline-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/line-chart-with-axis-scale-breaks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/line-chart-with-data-markers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/line-chart-with-logarithmic-axis.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/line-chart-with-multiple-axis.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/line-chart-with-zoom-pan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/multi-series-line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/multi-series-spline-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/multi-series-step-line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/spline-chart-with-legends.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/spline-chart-with-secondary-axis.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/spline-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/02-line-spline-step-line-charts/step-line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/area-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/multi-series-area-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/multi-series-range-area-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/multi-series-spline-area-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/range-area-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/range-spline-area-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/spline-area-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/stacked-area-100-chart-with-date-time-axis.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/stacked-area-100-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/stacked-area-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/03-stacked-spline-range-area-charts/step-area-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/bar-chart-with-axis-scale-break.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/bar-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/column-chart-with-multiple-axis.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/column-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/multi-series-bar-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/multi-series-range-column-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/multi-series-waterfall-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/range-bar-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/range-column-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/stacked-bar-100-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/stacked-bar-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/stacked-column-100-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/stacked-column-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/waterfall-chart-with-custom-color.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/04-column-stacked-range-waterfall-charts/waterfall-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/doughnut-Chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/doughnut-chart-with-custom-inner-radius.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/funnel-chart-with-custom-neck.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/funnel-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/inverted-reversed-funnel-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/pie-chart-with-custom-radius.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/pie-chart-with-legends.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/pie-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/pyramid-chart-where-area-represents-value.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/pyramid-chart-with-index-label-placed-Inside.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/05-pie-doughnut-funnel-pyramid-charts/pyramid-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/06-candlestick-ohlc-charts/candlestick-line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/06-candlestick-ohlc-charts/multi-series-candlestick-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/06-candlestick-ohlc-charts/ohlc-chart-from-json-data.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/06-candlestick-ohlc-charts/ohlc-stock-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/07-scatter-bubble-charts/bubble-chart-with-data-marker.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/07-scatter-bubble-charts/bubble-chart-with-zoom-pan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/07-scatter-bubble-charts/bubble-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/07-scatter-bubble-charts/multi-series-scatter-point-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/07-scatter-bubble-charts/scatter-point-chart-with-custom-marker.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/07-scatter-bubble-charts/scatter-point-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/08-box-and-whisker-charts/box-and-whisker-chart-with-custom-color.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/08-box-and-whisker-charts/box-and-whisker-chart-with-outliers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/08-box-and-whisker-charts/box-and-whisker-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/09-combination-charts/column-line-area-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/09-combination-charts/error-bar-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/09-combination-charts/error-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/09-combination-charts/error-line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/09-combination-charts/ohlc-line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/09-combination-charts/pareto-chart-with-index-data-label.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/09-combination-charts/pareto-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/09-combination-charts/range-area-line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/10-dynamic-charts/dynamic-column-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/10-dynamic-charts/dynamic-line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/10-dynamic-charts/dynamic-multi-series-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/11-integration/jquery-charts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/11-integration/jquery-line-chart-with-zoom-pan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/11-integration/jquery-resizable-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/11-integration/jquery-spline-area-chart-in-tab.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/examples/11-integration/jquery-spline-chart-with-image-export.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/instruction.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/jquery.canvasjs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/canvasjs/license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/charts/SchoolChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/charts/SchoolChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/charts/StatesChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/charts/StatesChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/teachers.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/teachers.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="19-migrate-project-on-react" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/Kitt-studio/telework" />
+      </set>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1izrSRT779wioMnCqtBjtreRQr1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/client/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="npm.start (1)">
+    <configuration name="back.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/back.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start (1)" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.serve" />
+        <item itemvalue="Node.js.back.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36ece946-d399-4370-85e7-48bdbfcf4d1b" name="Default Changelist" comment="" />
+      <created>1602921262738</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602921262738</updated>
+      <workItem from="1602921264727" duration="69000" />
+      <workItem from="1602921353220" duration="863000" />
+      <workItem from="1602922364862" duration="1356000" />
+      <workItem from="1602923874742" duration="1564000" />
+      <workItem from="1603092883166" duration="5122000" />
+      <workItem from="1603104390252" duration="3740000" />
+      <workItem from="1603194488171" duration="611000" />
+      <workItem from="1603274483111" duration="197000" />
+      <workItem from="1603275828113" duration="2460000" />
+      <workItem from="1603299598143" duration="1669000" />
+      <workItem from="1603369984068" duration="1199000" />
+      <workItem from="1603371212032" duration="2167000" />
+      <workItem from="1603555031278" duration="4534000" />
+      <workItem from="1603622172650" duration="420000" />
+      <workItem from="1603696257716" duration="503000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="19-migrate-project-on-react" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="141" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602921383796">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="141" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1602921383796" />
+    <state x="401" y="184" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603372235960">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="401" y="184" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1603372235960" />
+    <state x="417" y="135" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603372028404">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="417" y="135" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1603372028403" />
+    <state x="96" y="100" width="1174" height="574" key="DiffContextDialog" timestamp="1603372581294">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="96" y="100" width="1174" height="574" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1603372581294" />
+    <state x="471" y="142" key="FileChooserDialogImpl" timestamp="1603370564452">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="471" y="142" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1603370564452" />
+    <state width="1343" height="183" key="GridCell.Tab.0.bottom" timestamp="1603559661405">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1343" height="183" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1603559661405" />
+    <state width="1343" height="183" key="GridCell.Tab.0.center" timestamp="1603559661389">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1343" height="183" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1603559661389" />
+    <state width="1343" height="183" key="GridCell.Tab.0.left" timestamp="1603559661386">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1343" height="183" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1603559661386" />
+    <state width="1343" height="183" key="GridCell.Tab.0.right" timestamp="1603559661401">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1343" height="183" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1603559661401" />
+    <state x="0" y="0" width="1366" height="768" key="SettingsEditor" timestamp="1603371290984">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="0" y="0" width="1366" height="768" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1603371290984" />
+    <state x="443" y="18" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603372489011">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="443" y="18" key="git4idea.branch.GitSmartOperationDialog/0.0.1366.768@0.0.1366.768" timestamp="1603372489011" />
+    <state x="343" y="170" key="run.anything.popup" timestamp="1603696665838">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="343" y="170" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1603696665838" />
+    <state x="346" y="88" width="672" height="678" key="search.everywhere.popup" timestamp="1603277393239">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="88" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1603277393239" />
+  </component>
+</project>
