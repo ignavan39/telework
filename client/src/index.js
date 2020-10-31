@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { Provider } from 'mobx-react'
 import * as serviceWorker from './serviceWorker';
+import Answer from './store/teachers'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={Answer}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

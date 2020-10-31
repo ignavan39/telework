@@ -1,5 +1,5 @@
 import Axios from 'axios'
-import {action, observable,makeObservable, computed } from 'mobx'
+import {action, observable,makeObservable} from 'mobx'
 import env from '../env'
 
 class Answers {
@@ -15,6 +15,7 @@ class Answers {
             answers:observable,
             stateSet:observable,
             schoolSet:observable,
+            loader:observable,
             fetchAnswers:action,
         })
     }
@@ -36,5 +37,7 @@ class Answers {
 
 
 }
+
+
 
 export default new Answers()

@@ -12,7 +12,6 @@ const App = () => {
 
   useEffect(() => {
     Answer.fetchAnswers()
-
   }, [])
 
   return (

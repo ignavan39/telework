@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 import { observer } from "mobx-react";
 import CanvasReactJs from '../canvasjs/canvasjs.react'
@@ -12,8 +12,7 @@ const SchoolChart = () => {
     const { schoolSet } = Answer
     const { answers } = Answer
     const [state, setState] = useState('all')
-
-    let dataPoints = []
+    const [dataPoints, setDataPoints] = useState([])
     const answerMap = new Map()
     const parseData = (option) => {
         answers.map((item) => {
@@ -35,49 +34,7 @@ const SchoolChart = () => {
 
     }
 
-    const fillMap =() =>{
-        parseData(state)
-        const values = [...answerMap.values()]
-        const keys = [...answerMap.keys()]
-
-        let localCounter = 0
-        for(let item of values){
-            localCounter = localCounter+item
-        }
-        console.log(localCounter)
-        dataPoints = (values.map((item, idx) => {
-            return {
-                label: (keys[idx]).toString(),
-                y: ((item / localCounter)*100)
-            }
-        }))
-
-        return dataPoints
-
-    }
-    const selectHandler = (event) => {
-        event.persist();
-        setState((prev) => (event.target.value))
-        fillMap()
-        setOptions((prev) => (
-            {
-                ...prev,
-                data: [
-                    {
-                        indexLabel: "{y}",
-                        // Change type to "doughnut", "line", "splineArea", etc.
-                        type: "bar",
-                        dataPoints
-                    }
-                ]
-            }
-        ))
-        console.log(options)
-
-    }
-
-  
-    const [options, setOptions] = useState({
+    let options = {
         theme: 'dark2',
         animationEnabled: true,
         axisX: {
@@ -97,24 +54,64 @@ const SchoolChart = () => {
                 indexLabel: "{y}",
                 // Change type to "doughnut", "line", "splineArea", etc.
                 type: "bar",
-                dataPoints: fillMap()
+                dataPoints: dataPoints
             }
         ]
-    })
+    }
+    const fillMap = () => {
+        parseData(state)
+        const values = [...answerMap.values()]
+        const keys = [...answerMap.keys()]
+
+        let localCounter = 0
+        for (let item of values) {
+            localCounter = localCounter + item
+        }
+        console.log(localCounter)
+        setDataPoints((values.map((item, idx) => {
+            return {
+                label: (keys[idx]).toString(),
+                y: ((item / localCounter).toFixed(2) * 100)
+            }
+        })))
+
+    }
+    const selectHandler = (event) => {
+        //event.persist();
+        // event.preventDefault()
+        setState(event.target.value)
+        fillMap()
+        options = {
+            data: [
+                {
+                    indexLabel: "{y}",
+                    type: "bar",
+                    dataPoints
+                }
+            ]
+        }
+        console.log(options)
+        console.log(state)
+    }
+
+
+
+
     return (
         <div style={{ height: '60vh' }}>
-            <select onChange={selectHandler}>
-                <option defaultValue='all'>Все</option>
+            <select onChange={selectHandler} value={state} defaultValue={state} aria-labelledby="dropdownMenuButton">
+                <option value='all'>Все</option>
                 {
+
                     schoolSet.map((item, idx) => (
-                        <option value={item} key={idx} >{item}</option>
+                        <option key={idx} value={item}>{item}</option>
                     ))
+
                 }
             </select>
             <div style={{ width: '45vw', margin: 'auto 2vw' }}>
-                <CanvasJSChart options={options}
-                /* onRef={ref => this.chart = ref} */
-                />  </div>
+                <CanvasJSChart options={options} />
+            </div>
         </div>
     );
 }
