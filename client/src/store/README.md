@@ -17,9 +17,10 @@
 
 ### AnswerState:
 
-`
+` 
 {
     answers: [],
     states: Set<string>,
     schools: Set<string>
 }
+`
