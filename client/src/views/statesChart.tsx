@@ -1,8 +1,6 @@
-import { randomInt } from 'crypto'
-import { stat } from 'fs'
-import { platform } from 'os'
+
 import React, { useEffect, useState } from 'react'
-import { Bar } from 'react-chartjs-2'
+import { Pie} from 'react-chartjs-2'
 import { useSelector } from 'react-redux'
 import { AnswerState } from '../store/answersReducer'
 
@@ -13,6 +11,8 @@ export const StatesChart: React.FC = () => {
     const states = useSelector((state: AnswerState) => state.states)
 
     const options = {
+      //  responsive: true,
+      //  maintainAspectRatio: false,
         scales: {
             yAxes: [{
                 ticks: {
@@ -39,11 +39,15 @@ export const StatesChart: React.FC = () => {
                 }
             })
         }
-        const labels = Array.from(answersMap.keys())
+        
         let counters = Array.from(answersMap.values());
-        counters = counters.map(item=>((item/totalNumberHere)*100))
+        counters = counters.map(item=>(Math.round((item/totalNumberHere)*100)))
         console.log(counters)
-        let colors = Array<string>()
+        let labels = Array.from(answersMap.keys())
+        labels = labels.map((item,idx)=>(
+            `${item} ${counters[idx]}%`
+         ))
+         let colors = Array<string>()
         for(let i=0;i<counters.length;i++){
             colors.push(`rgb(
                 ${Math.floor(Math.random() * Math.floor(255))}
@@ -61,9 +65,5 @@ export const StatesChart: React.FC = () => {
 
     }
 
-    return (
-        <div>
-            <Bar data={parseData()} options={options}></Bar>
-        </div>
-    )
+    return <Pie data={parseData()} options={options}/>
 }
