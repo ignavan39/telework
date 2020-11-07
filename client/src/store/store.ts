@@ -4,5 +4,5 @@ import thunk from 'redux-thunk'
 import { answersReducer } from './answersReducer'
 
 export const store = createStore(answersReducer,compose(
-    applyMiddleware(logger,thunk)
+    applyMiddleware(thunk,logger)
 ))
