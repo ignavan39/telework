@@ -11,7 +11,7 @@ type MyExtraArg = undefined;
 type ThunkResult<R> = ThunkAction<R, AnswerState, MyExtraArg, Action>;
 export type MyAction = { type: string, payload: AnswerState }
 type answer = {
-    timeAns: string
+    timeAns: string,
     state: string,
     school: string,
     name: string,
