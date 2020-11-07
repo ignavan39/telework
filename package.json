@@ -9,11 +9,11 @@
     },
     "author": "Ivan Ignatenko <ivanignatenko28@gmail.com>",
     "engines": {
-        "node": "14.13.0"
+        "node": "14.14.0"
     },
     "license": "MIT",
     "dependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.20.0",
         "connect-history-api-fallback": "^1.6.0",
         "csv-parser": "^2.3.2",
         "express": "^4.17.1"
