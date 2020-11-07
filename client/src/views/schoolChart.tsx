@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { Pie } from "react-chartjs-2";
+import { Bar, Pie } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 import { AnswerState } from "../store/answersReducer";
 import { Header, SelectButton, Title, Wrapper } from "./shared/styles";
@@ -41,24 +41,16 @@ export const SchoolChart : React.FC = () => {
       console.log(counters);
       let labels = Array.from(answersMap.keys());
       labels = labels.map((item, idx) => `${item} ${counters[idx]}%`);
-      let colors = Array<string>();
-      for (let i = 0; i < counters.length; i++) {
-        colors.push(`rgb(
-                  ${Math.floor(Math.random() * Math.floor(255))}
-                  ,${Math.floor(Math.random() * Math.floor(255))}
-                  ,${Math.floor(Math.random() * Math.floor(255))})`);
-      }
-  
+      const data = counters.map((item,idx)=>({
+        data:[counters[idx]],
+        backgroundColor:`rgb(
+          ${Math.floor(Math.random() * Math.floor(255))}
+          ,${Math.floor(Math.random() * Math.floor(255))}
+          ,${Math.floor(Math.random() * Math.floor(255))})`,
+          label:labels[idx]
+      }))
       return {
-        labels,
-        datasets: [
-          {
-            data: counters,
-            backgroundColor: colors,
-            borderColor: "#fff",
-            borderWidth: 2,
-          },
-        ],
+        datasets:data
       };
     };
   
@@ -76,7 +68,7 @@ export const SchoolChart : React.FC = () => {
             ))}
           </SelectButton>
         </Header>
-        <Pie
+        <Bar
           data={parseData()}
           options={{ responsive: true, maintainAspectRatio: false }}
         />
