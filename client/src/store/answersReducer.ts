@@ -9,7 +9,6 @@ interface AnswerState {
 
 type MyExtraArg = undefined;
 type ThunkResult<R> = ThunkAction<R, AnswerState, MyExtraArg, Action>;
-
 export type MyAction = { type: string, payload: AnswerState }
 type answer = {
     timeAns: string
@@ -33,13 +32,9 @@ const initialState = () => {
     })
 }
 
-
-
-
 export const fetchAnswers = (): ThunkResult<Promise<void>> => async (dispatch) => {
     const states = new Set<string>();
     const schools = new Set<string>();
-    console.log('asdasd')
     const rawResponse = await fetch('http://localhost:8080/api')
         .then(response => {
             if (response.ok) {
@@ -51,11 +46,11 @@ export const fetchAnswers = (): ThunkResult<Promise<void>> => async (dispatch) =
             console.error(err);
         })
     const answers = rawResponse;
-    answers.map((item:answer) => {
+    answers.map((item: answer) => {
         states.add(item.state.trim());
         schools.add(item.school.trim());
     })
-    dispatch({ type: FETCH_ANSWERS, payload: {answers,states,schools}})
+    dispatch({ type: FETCH_ANSWERS, payload: { answers, states, schools } })
 }
 
 export const answersReducer = (state = initialState(), action: MyAction) => {

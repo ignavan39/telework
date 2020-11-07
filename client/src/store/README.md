@@ -1,7 +1,7 @@
 # Store
 
 ### Answer type:
-`
+
 | Name | type |
 | ------------- | ------------- |
 | timeAns | string |
@@ -13,7 +13,7 @@
 | ready| string|
 |timeToTraining | string|
 |timeOnTelephone | string|
-`
+
 
 ### AnswerState:
 
