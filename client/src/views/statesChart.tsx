@@ -1,38 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { AnswerState } from "../store/answersReducer";
 
+const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
 const Wrapper = styled.div`
-  width: auto;
-  height: 60vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-`
+  width: 60vw;
+  height: 70vh;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const Title = styled.h2`
-    font-weight:bold;
-    color:#fff;
-    text-align:center;
-    margin-top:1rem;
-`
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-top: 1rem;
+`;
 const SelectButton = styled.select`
-    text-align:center;
-    width:50vw;
-    margin:2rem;
-`
+  text-align: center;
+  font-size: 1.4rem;
+  width: 20vw;
+  margin: 2rem;
+  font-weight: 800;
+  color: #fff;
+  background-color: #000127;
+`;
 
 export const StatesChart: React.FC = () => {
   const [state, setState] = useState<string>("all");
   const answers = useSelector((state: AnswerState) => state.answers);
-  const states = Array.from(useSelector((state: AnswerState) => state.states).values());
+  const states = Array.from(
+    useSelector((state: AnswerState) => state.states).values()
+  );
 
+  let totalCount = answers.length;
   const parseData = () => {
     const answersMap = new Map<string, number>();
     let totalNumberHere = 0;
-    if (state == "all") {
+    if (state === "all") {
       answers.map((item) => {
         totalNumberHere++;
         if (answersMap.has(item.platform)) {
@@ -45,8 +59,22 @@ export const StatesChart: React.FC = () => {
           answersMap.set(item.platform, 1);
         }
       });
+    } else {
+      answers.map((item) => {
+        if (item.state.trim() === state.trim()) {
+          totalNumberHere++;
+          if (answersMap.has(item.platform)) {
+            let counter = answersMap.get(item.platform);
+            if (counter) {
+              counter++;
+              answersMap.set(item.platform, counter);
+            }
+          } else {
+            answersMap.set(item.platform, 1);
+          }
+        }
+      });
     }
-
     let counters = Array.from(answersMap.values());
     counters = counters.map((item) =>
       Math.round((item / totalNumberHere) * 100)
@@ -61,33 +89,42 @@ export const StatesChart: React.FC = () => {
                 ,${Math.floor(Math.random() * Math.floor(255))}
                 ,${Math.floor(Math.random() * Math.floor(255))})`);
     }
+
+    totalCount = totalNumberHere;
     return {
       labels,
       datasets: [
         {
           data: counters,
           backgroundColor: colors,
-          borderColor:'#fff',
-          borderWidth: 2
+          borderColor: "#fff",
+          borderWidth: 2,
         },
       ],
     };
   };
 
+  const onSelectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
+    console.log(event.target.value)
+    setState(event.target.value);
+  };
+
   return (
     <Wrapper>
-    <SelectButton value={state}>
-        {
-            states.map((item)=>(
-                <option value={item}>{item}</option>
-            ))
-        }
-    </SelectButton>
+      <Header>
+        <SelectButton value={state} onChange={onSelectHandler}>
+          <option value="all">Все районы</option>
+          {states.map((item,idx) => (
+            <option value={item} key={idx}>{item}</option>
+          ))}
+        </SelectButton>
+        <Title>Всего отвтетов:{totalCount}</Title>
+      </Header>
       <Pie
         data={parseData()}
         options={{ responsive: true, maintainAspectRatio: false }}
       />
-      <Title>Все районы</Title>
+      <Title>{state === 'all' ? "Все районы" : state}</Title>
     </Wrapper>
   );
 };
