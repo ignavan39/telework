@@ -1,7 +1,7 @@
 import { ThunkAction, ThunkDispatch } from "redux-thunk";
 import { Action } from 'redux';
-interface AnswerState {
-    answers: [],
+export interface AnswerState {
+    answers: Array<Answer>,
     states: Set<string>,
     schools: Set<string>
 
@@ -10,7 +10,7 @@ interface AnswerState {
 type MyExtraArg = undefined;
 type ThunkResult<R> = ThunkAction<R, AnswerState, MyExtraArg, Action>;
 export type MyAction = { type: string, payload: AnswerState }
-type answer = {
+export type Answer = {
     timeAns: string,
     state: string,
     school: string,
@@ -26,7 +26,7 @@ export const FETCH_ANSWERS = "ANSWERS/FETCH_ANSWERS";
 
 const initialState = () => {
     return ({
-        answers: [],
+        answers: new Array<Answer>(),
         states: new Set<string>(),
         schools: new Set<string>()
     })
@@ -46,7 +46,7 @@ export const fetchAnswers = (): ThunkResult<Promise<void>> => async (dispatch) =
             console.error(err);
         })
     const answers = rawResponse;
-    answers.map((item: answer) => {
+    answers.map((item: Answer) => {
         states.add(item.state.trim());
         schools.add(item.school.trim());
     })

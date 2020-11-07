@@ -4,6 +4,7 @@ import "./App.css";
 import styled from "styled-components";
 import { fetchAnswers } from "./store/answersReducer";
 import { useDispatch } from "react-redux";
+import { StatesChart } from "./views/statesChart";
 
 const Root = styled.div`
   max-width: 100vw;
@@ -19,7 +20,7 @@ function App() {
   useEffect(()=>{
     dispatch(fetchAnswers())
   },[])
-  return <Root><Container>123</Container></Root>;
+  return <Root><Container><StatesChart></StatesChart>123</Container></Root>;
 }
 
 export default App;
