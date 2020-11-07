@@ -5,22 +5,29 @@ import styled from "styled-components";
 import { AnswerState } from "../store/answersReducer";
 
 const Wrapper = styled.div`
-  width: 50vw;
-  height: 50vh;
+  width: auto;
+  height: 60vh;
   display:flex;
   flex-direction:column;
+  align-items:center;
 `
 
 const Title = styled.h2`
     font-weight:bold;
     color:#fff;
     text-align:center;
+    margin-top:1rem;
+`
+const SelectButton = styled.select`
+    text-align:center;
+    width:50vw;
+    margin:2rem;
 `
 
 export const StatesChart: React.FC = () => {
   const [state, setState] = useState<string>("all");
   const answers = useSelector((state: AnswerState) => state.answers);
-  const states = useSelector((state: AnswerState) => state.states);
+  const states = Array.from(useSelector((state: AnswerState) => state.states).values());
 
   const parseData = () => {
     const answersMap = new Map<string, number>();
@@ -60,7 +67,8 @@ export const StatesChart: React.FC = () => {
         {
           data: counters,
           backgroundColor: colors,
-          borderWidth: 1,
+          borderColor:'#fff',
+          borderWidth: 2
         },
       ],
     };
@@ -68,6 +76,13 @@ export const StatesChart: React.FC = () => {
 
   return (
     <Wrapper>
+    <SelectButton value={state}>
+        {
+            states.map((item)=>(
+                <option value={item}>{item}</option>
+            ))
+        }
+    </SelectButton>
       <Pie
         data={parseData()}
         options={{ responsive: true, maintainAspectRatio: false }}
