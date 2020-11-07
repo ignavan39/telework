@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { fetchAnswers } from "./store/answersReducer";
 import { useDispatch } from "react-redux";
 import { StatesChart } from "./views/statesChart";
+import { SchoolChart } from "./views/schoolChart";
 
 const Root = styled.div`
   max-width: 100vw;
@@ -24,6 +25,8 @@ function App() {
     <Root>
       <Container>
         <StatesChart />
+        <hr></hr>
+        <SchoolChart/>
       </Container>
     </Root>
   );

@@ -1,39 +1,9 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import { useSelector } from "react-redux";
-import styled from "styled-components";
 import { AnswerState } from "../store/answersReducer";
+import { Header, SelectButton, Title, Wrapper } from "./shared/styles";
 
-const Header = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-const Wrapper = styled.div`
-  width: 60vw;
-  height: 70vh;
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Title = styled.h2`
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  margin-top: 1rem;
-`;
-const SelectButton = styled.select`
-  text-align: center;
-  font-size: 1.4rem;
-  width: 20vw;
-  margin: 2rem;
-  font-weight: 800;
-  color: #fff;
-  background-color: #000127;
-`;
 
 export const StatesChart: React.FC = () => {
   const [state, setState] = useState<string>("all");
