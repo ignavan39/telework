@@ -19,21 +19,28 @@ const Root = styled.div`
 
 const Container = styled.div`
   margin: 0 5vw;
-  @media (max-width: 110px) {
-    margin: 1px;
+  @media (max-width: 1100px) {
+    margin: 1rem;
   }
 `;
 
-
 const Preview = styled.div`
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 5rem auto;
+  text-align:center;
+  @media (max-width: 1100px) {
+    font-size:0.8rem;
+  }
+`;
 
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:1rem;
-font-weight:800;
-color:#fff;
-margin:5rem auto;
+const Title = styled.h2`
+  font-size:2rem;
 
 `
 function App() {
@@ -44,7 +51,11 @@ function App() {
   return (
     <Root>
       <Container>
-        <Preview></Preview>
+        <Preview>
+         <Title> Статистические данные</Title> Здесь представлена информация о том, какими
+          платформами пользуются(пользовались) учителя во время режима
+          самоизоляции для осуществления процесса дистанционного обучения
+        </Preview>
         <StatesChart />
         <hr></hr>
         <SchoolChart />
