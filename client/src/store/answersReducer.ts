@@ -35,7 +35,7 @@ const initialState = () => {
 export const fetchAnswers = (): ThunkResult<Promise<void>> => async (dispatch) => {
     const states = new Set<string>();
     const schools = new Set<string>();
-    const rawResponse = await fetch('http://localhost:8080/api')
+    const rawResponse = await fetch('/api')
         .then(response => {
             if (response.ok) {
                 console.log(response)
