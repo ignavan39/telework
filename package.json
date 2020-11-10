@@ -30,8 +30,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "node server.js \"react-scripts start\"",
-    "build": "react-scripts build",
+    "start": "NODE_ENV=production && node server.js",
+    "build": "react-scripts build -p",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently -k  \"nodemon server.js\" \"react-scripts start\""
