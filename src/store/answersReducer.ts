@@ -33,9 +33,10 @@ const initialState = () => {
 }
 
 export const fetchAnswers = (): ThunkResult<Promise<void>> => async (dispatch) => {
+    const url = process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:8080/api'
     const states = new Set<string>();
     const schools = new Set<string>();
-    const rawResponse = await fetch('/api')
+    const rawResponse = await fetch(url)
         .then(response => {
             if (response.ok) {
                 console.log(response)

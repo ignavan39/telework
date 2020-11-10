@@ -24,8 +24,8 @@ app.get('/api', (req, res, next) => {
     res.send(results);
 });
 
-app.use(express.static(__dirname + '/client/build'));
-app.get(/.*/, (req, res) => res.sendFile(__dirname + '/client/build/index.html'));
+app.use(express.static(__dirname + '/build'));
+app.get(/.*/, (req, res) => res.sendFile(__dirname + '/build/index.html'));
 app.listen(PORT, () => {
     console.log(`Server startred on port ${PORT}`);
 });

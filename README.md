@@ -1,36 +1,14 @@
 # Telework
 
 ## Just my project for collecting statistics
-Statistics on web platforms used by quarantined teachers on
-04/12/20 work done on express + React + (react-charts)[https://canvasjs.com/react-charts/]
+Statistics on web platforms used by quarantined teachers on 04/12/20 
+##### work done on express + React + Redux + TypeScript + ChartJS
 
 -----
-
-## Back
-
-to start
-```
-npm init
-```
-or if you use yarn
-```
-yarn
-```
 #### Start for devepolment
 
 ```
 yarn dev
-```
-------
-## Client
-
-to start
-```
-yarn
-```
-#### Start for devepolment
-```
-yarn start
 ```
 #### Build
 
