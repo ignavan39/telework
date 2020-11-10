@@ -2,9 +2,17 @@
 
 ## Just my project for collecting statistics
 Statistics on web platforms used by quarantined teachers on 04/12/20 
-##### work done on `express + React + Redux + TypeScript + ChartJS`
+
+The project is hosted on heroku:
+`https://telework-statistic.herokuapp.com/`
+Click [here](https://telework-statistic.herokuapp.com/) to go to the site
+
+Work done on:
+
+###### `express + React + Redux + TypeScript + ChartJS`
 
 -----
+
 #### Start for devepolment
 
 ```
@@ -16,7 +24,7 @@ yarn dev
 yarn build
 ```
 
-### Contributing
+### Contributing quide
 ------
 * 1.Fork it
 * 2.Create your feature branch (git checkout -b my-new-feature)
