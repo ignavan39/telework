@@ -1,7 +1,11 @@
-# Telework
+# Telework 📱💻📠
 
-## Just my project for collecting statistics
-Statistics on web platforms used by quarantined teachers on 04/12/20 
+##  My awesome project for collecting statistics 📈
+
+Statistics of web platforms used by teachers in quarantine as of 04/12/2020
+at a certain moment, when my university was quarantined and I was sitting at home, I wondered what kind of web platforms teachers use in our area / region.
+I set up a google form mailing list and saved everything in table.csv
+This is how this project actually appeared, thank you very much for your attention.
 
 The project is hosted on heroku:
 `https://telework-statistic.herokuapp.com/`
