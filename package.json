@@ -14,7 +14,7 @@
     "@types/redux-logger": "^3.0.8",
     "@types/styled-components": "^5.1.4",
     "chart.js": "^2.9.4",
-    "csv-parser": "^2.3.3",
+    "csv-parser": "^2.3.4",
     "eslint-config-strongloop": "^2.1.0",
     "react": "^17.0.1",
     "react-chartjs-2": "^2.11.1",
