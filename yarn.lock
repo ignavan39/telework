@@ -3995,10 +3995,10 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.4.tgz#b156d7be03b84ff425c9a0a4b1e5f4da9c5ca888"
   integrity sha512-xc8DUsCLmjvCfoD7LTGE0ou2MIWLx0K9RCZwSHMOdynqRsP4MtUcLeqh1HcQ2dInwDTqn+3CE0/FZh1et+p4jA==
 
-csv-parser@^2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/csv-parser/-/csv-parser-2.3.4.tgz#f8172e77d416bf89a422dc0bc6f56b4839962ecb"
-  integrity sha512-UlzYZEiHR5OQTh0C97HeZfSBOCshKIe0NpG5vYlgAcXheDKvZoIHvZNMgg1IGvtvbSKVRB6/UIA4xxjzKi2TFA==
+csv-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/csv-parser/-/csv-parser-3.0.0.tgz#b88a6256d79e090a97a1b56451f9327b01d710e7"
+  integrity sha512-s6OYSXAK3IdKqYO33y09jhypG/bSDHPuyCme/IdEHfWpLf/jKcpitVFyOC6UemgGk8v7Q5u2XE0vvwmanxhGlQ==
   dependencies:
     minimist "^1.2.0"
 
