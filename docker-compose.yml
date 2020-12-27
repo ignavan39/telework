@@ -5,26 +5,27 @@ services:
     build:
      context: .
     volumes:
-      - ./usr/src/app
-      - ./usr/src/app/node_modules
+      - ./usr/app
+      - ./usr/app/node_modules
     ports:
       - 8081:8081
     command:
         - yarn
-        - yarn start:dev
+        - yarn server:dev
     env_file:
       - .env
     depends_on:
-      - db
-  db:
-    image: mysql:latest
-    volumes:
-     - "./.mysql-data/db:/var/lib/mysql"
-    restart: always
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: db
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      - mysql
+  mysql:
+        image: 'mysql:latest'
+        environment:
+          MYSQL_USER: root
+          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: db
+        restart: always
+        ports:
+        - '3306:3306'
+        hostname: 127.0.0.1
+        volumes:
+        - ./db:/bitnami/mysql/data
