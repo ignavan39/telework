@@ -4,6 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const csv = require('csv-parser');
 const results = [];
+const setSchools = new Set()
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
@@ -16,9 +17,8 @@ app.use(function (req, res, next) {
 fs.createReadStream('table.csv')
     .pipe(csv())
     .on('data', (data) => results.push(data))
-    .on('end', () => {
-        console.log(results);
-    });
+
+
 
 app.get('/api', (req, res, next) => {
     res.send(results);
