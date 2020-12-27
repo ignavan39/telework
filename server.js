@@ -1,11 +1,11 @@
-const fs = require('fs');
-const express = require('express');
-const models = require('./models')
+const fs = require("fs");
+const express = require("express");
+const models = require("./models");
 const app = express();
 const PORT = process.env.PORT || 8080;
 const csv = require("csv-parser");
 const results = [];
-const setSchools = new Set()
+const setSchools = new Set();
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header(
@@ -22,13 +22,15 @@ app.get("/api", (req, res, next) => {
   res.send(results);
 });
 
-app.use(express.static(__dirname + '/build'));
-app.get(/.*/, (req, res) => res.sendFile(__dirname + '/build/index.html'));
-models.sequelize.sync().then(() => {
-      app.listen(PORT, () => {
-        console.log(`Server startred on port ${PORT}`);
-     })
-    }
-).catch((err)=>{
-    console.error("ERROR IN CONNECT DB:",err)
-})
+app.use(express.static(__dirname + "/build"));
+app.get(/.*/, (req, res) => res.sendFile(__dirname + "/build/index.html"));
+models.sequelize
+  .sync()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server startred on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("ERROR IN CONNECT DB:", err);
+  });
