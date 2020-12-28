@@ -1,6 +1,5 @@
 const fs = require("fs");
 const express = require("express");
-const models = require("./models");
 const app = express();
 const PORT = process.env.PORT || 8080;
 const csv = require("csv-parser");
@@ -24,13 +23,8 @@ app.get("/api", (req, res, next) => {
 
 app.use(express.static(__dirname + "/build"));
 app.get(/.*/, (req, res) => res.sendFile(__dirname + "/build/index.html"));
-models.sequelize
-  .sync()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server startred on port ${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.error("ERROR IN CONNECT DB:", err);
-  });
+
+app.listen(PORT, () => {
+  console.log(`Server startred on port ${PORT}`);
+});
+
