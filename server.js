@@ -27,4 +27,3 @@ app.get(/.*/, (req, res) => res.sendFile(__dirname + "/build/index.html"));
 app.listen(PORT, () => {
   console.log(`Server startred on port ${PORT}`);
 });
-
