@@ -1,31 +1,18 @@
-version: '3.3'
+version: "3.7"
 services:
-  main:
-    container_name: main
-    build:
-     context: .
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: telework_db
     volumes:
-      - ./usr/app
-      - ./usr/app/node_modules
+      - ./pgdata:/var/lib/postgresql/data
     ports:
-      - 8081:8081
-    command:
-        - yarn
-        - yarn server:dev
-    env_file:
-      - .env
+      - "5432:5432"
+  web:
+    image: telework
     depends_on:
-      - mysql
-  mysql:
-        image: 'mysql:latest'
-        environment:
-          MYSQL_USER: root
-          MYSQL_PASSWORD: root
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: db
-        restart: always
-        ports:
-        - '3306:3306'
-        hostname: 127.0.0.1
-        volumes:
-        - ./db:/bitnami/mysql/data
+      - db
+    ports:
+      - "4000:4000"
