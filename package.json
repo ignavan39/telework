@@ -28,7 +28,7 @@
     "sequelize-auto": "^0.7.11",
     "sequelize-cli": "^6.2.0",
     "styled-components": "^5.2.1",
-    "typescript": "^4.1.5",
+    "typescript": "^4.2.2",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
